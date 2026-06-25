@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import https from 'https';
+import meshAdapter from './mesh-adapter.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -89,6 +90,14 @@ class TechnosisAdapter {
       color: this.codex.color,
       principle: this.codex.principle
     };
+
+    // Emit daily resonance as a Block Mesh trust signal
+    const agentId = agent.id || agent.name;
+    if (agentId) {
+      await meshAdapter.emitResonanceSignal(agentId);
+      const ctx = meshAdapter.getMeshContext();
+      if (ctx) agent.metadata.mesh = ctx;
+    }
   }
 
   async onThink(prompt, response) {

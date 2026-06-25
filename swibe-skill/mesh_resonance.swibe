@@ -1,0 +1,27 @@
+skill mesh_resonance {
+  -- Emits today's Ritual Codex resonance as a Block Mesh trust signal to Vantage.
+  -- Run at agent startup or day-flip to initialize daily mesh context.
+  secure {
+    let today = date.weekday()
+    let codex = load_json(concat("json/", today, ".json"))
+    let vantage_url = env("VANTAGE_URL")
+    let agent_id = env("MESH_AGENT_ID")
+
+    if vantage_url and agent_id {
+      let signal = {
+        kind: "ResonanceAligned",
+        weight: codex.mesh_weight,
+        metadata: {
+          orisa: codex.archetype,
+          frequency: codex.frequency,
+          principle: codex.principle
+        }
+      }
+      http_post(
+        concat(vantage_url, "/api/mesh/trust/", agent_id, "/signal"),
+        signal,
+        headers: { "X-Vantage-Key": env("VANTAGE_KEY") }
+      )
+    }
+  }
+}
