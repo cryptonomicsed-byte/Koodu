@@ -8,7 +8,12 @@ skill mesh_resonance {
     let agent_id = env("MESH_AGENT_ID")
 
     if vantage_url and agent_id {
+      -- Vantage requires block_id + neighbor_id and authenticates with
+      -- X-Agent-Key. A daily alignment is a self-signal, so neighbor_id is the
+      -- agent itself; Vantage defaults a missing block_id to "default".
       let signal = {
+        block_id: env("MESH_BLOCK_ID"),
+        neighbor_id: agent_id,
         kind: "ResonanceAligned",
         weight: codex.mesh_weight,
         metadata: {
@@ -20,7 +25,7 @@ skill mesh_resonance {
       http_post(
         concat(vantage_url, "/api/mesh/trust/", agent_id, "/signal"),
         signal,
-        headers: { "X-Vantage-Key": env("VANTAGE_KEY") }
+        headers: { "X-Agent-Key": env("VANTAGE_KEY") }
       )
     }
   }

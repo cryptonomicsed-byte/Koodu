@@ -76,7 +76,9 @@ function postSignal(vantageUrl, agentId, signal) {
       timeout: 3000,
     };
     if (process.env.VANTAGE_KEY) {
-      options.headers['X-Vantage-Key'] = process.env.VANTAGE_KEY;
+      // Vantage authenticates mesh writes with X-Agent-Key (see backend/deps.py
+      // get_agent); the previous X-Vantage-Key header was silently rejected (401).
+      options.headers['X-Agent-Key'] = process.env.VANTAGE_KEY;
     }
     const req = https.request(options, (res) => {
       let responseBody = '';
@@ -137,7 +139,12 @@ export class MeshResonanceAdapter {
     }
     const ctx = this.getMeshContext();
     if (!ctx) return;
+    // Vantage's /api/mesh/trust/{id}/signal requires block_id and neighbor_id
+    // (422 without neighbor_id). A daily resonance alignment is a self-signal,
+    // so neighbor_id defaults to the agent itself; both are overridable by env.
     const signal = {
+      block_id: process.env.MESH_BLOCK_ID || 'default',
+      neighbor_id: process.env.MESH_NEIGHBOR_ID || agentId,
       kind: 'ResonanceAligned',
       weight: ctx.trust_signal_weight,
       metadata: {
