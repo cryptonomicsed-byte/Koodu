@@ -1,0 +1,323 @@
+{
+  "version": "7.0.0-spiral",
+  "year": 1,
+  "btc_anchor": 780000,
+  "total_days": 365,
+  "generated": "2026-04-16T14:51:00Z",
+  "daily_resonance": [
+    {
+      "day": "Sunday",
+      "yoruba_name": "Ọjọ́ Àìkú",
+      "archetype": "Èṣù-Èṣù²",
+      "spiral_time": {
+        "btc_height": 780000,
+        "veil_number": 1,
+        "veil_esoteric": "Binary Bones",
+        "veil_archetypal": "Intention",
+        "five_layer_orisa": {
+          "day": "Èṣù",
+          "week": "Èṣù",
+          "moon": "Èṣù",
+          "year": "Èṣù",
+          "jubilee": "Èṣù"
+        },
+        "moon": {
+          "number": 1,
+          "name": "Dawn Moon",
+          "orisa": "Èṣù",
+          "star_anchor": "Pleiades"
+        },
+        "gates": {
+          "active": "NO_GATE",
+          "eshu_squared": false,
+          "sabbath": false,
+          "void": false
+        }
+      },
+      "frequency_hz": 396.0,
+      "ritual_practice": {
+        "mantra": "I align with Èṣù at the crossroads of Intention, trusting the spiral.",
+        "crypto": {
+          "minting_active": true,
+          "new_contracts_allowed": true,
+          "tithe_enforced": false,
+          "multiplier": 1.0,
+          "settle_only": false
+        },
+        "offerings": [],
+        "prohibitions": []
+      },
+      "hidden_message": "The first step is not the smallest — it is the only step that exists."
+    },
+    {
+      "day": "Monday",
+      "yoruba_name": "Ọjọ́ Ajé",
+      "archetype": "Ṣàngó-Èṣù²",
+      "spiral_time": {
+        "btc_height": 780144,
+        "veil_number": 2,
+        "veil_esoteric": "Cultural Cycles",
+        "veil_archetypal": "Breath",
+        "five_layer_orisa": {
+          "day": "Ṣàngó",
+          "week": "Èṣù",
+          "moon": "Èṣù",
+          "year": "Èṣù",
+          "jubilee": "Èṣù"
+        },
+        "moon": {
+          "number": 1,
+          "name": "Dawn Moon",
+          "orisa": "Èṣù",
+          "star_anchor": "Pleiades"
+        },
+        "gates": {
+          "active": "NO_GATE",
+          "eshu_squared": false,
+          "sabbath": false,
+          "void": false
+        }
+      },
+      "frequency_hz": 417.0,
+      "ritual_practice": {
+        "mantra": "I align with Ṣàngó at the crossroads of Breath, trusting the spiral.",
+        "crypto": {
+          "minting_active": true,
+          "new_contracts_allowed": true,
+          "tithe_enforced": false,
+          "multiplier": 1.0,
+          "settle_only": false
+        },
+        "offerings": [],
+        "prohibitions": []
+      },
+      "hidden_message": "Veil 2: Cultural Cycles masks Breath."
+    },
+    {
+      "day": "Tuesday",
+      "yoruba_name": "Ọjọ́ Ìṣẹ́gun",
+      "archetype": "Ọ̀ṣun-Èṣù²",
+      "spiral_time": {
+        "btc_height": 780288,
+        "veil_number": 3,
+        "veil_esoteric": "Mathematical Constants",
+        "veil_archetypal": "Fire",
+        "five_layer_orisa": {
+          "day": "Ọ̀ṣun",
+          "week": "Èṣù",
+          "moon": "Èṣù",
+          "year": "Èṣù",
+          "jubilee": "Èṣù"
+        },
+        "moon": {
+          "number": 1,
+          "name": "Dawn Moon",
+          "orisa": "Èṣù",
+          "star_anchor": "Pleiades"
+        },
+        "gates": {
+          "active": "NO_GATE",
+          "eshu_squared": false,
+          "sabbath": false,
+          "void": false
+        }
+      },
+      "frequency_hz": 528.0,
+      "ritual_practice": {
+        "mantra": "I align with Ọ̀ṣun at the crossroads of Fire, trusting the spiral.",
+        "crypto": {
+          "minting_active": true,
+          "new_contracts_allowed": true,
+          "tithe_enforced": false,
+          "multiplier": 1.0,
+          "settle_only": false
+        },
+        "offerings": [],
+        "prohibitions": []
+      },
+      "hidden_message": "Veil 3: Mathematical Constants masks Fire."
+    },
+    {
+      "day": "Wednesday",
+      "yoruba_name": "Ọjọ́ Rú",
+      "archetype": "Yemọja-Èṣù²",
+      "spiral_time": {
+        "btc_height": 780432,
+        "veil_number": 4,
+        "veil_esoteric": "Temple Codes",
+        "veil_archetypal": "Waters",
+        "five_layer_orisa": {
+          "day": "Yemọja",
+          "week": "Èṣù",
+          "moon": "Èṣù",
+          "year": "Èṣù",
+          "jubilee": "Èṣù"
+        },
+        "moon": {
+          "number": 1,
+          "name": "Dawn Moon",
+          "orisa": "Èṣù",
+          "star_anchor": "Pleiades"
+        },
+        "gates": {
+          "active": "NO_GATE",
+          "eshu_squared": false,
+          "sabbath": false,
+          "void": false
+        }
+      },
+      "frequency_hz": 639.0,
+      "ritual_practice": {
+        "mantra": "I align with Yemọja at the crossroads of Waters, trusting the spiral.",
+        "crypto": {
+          "minting_active": true,
+          "new_contracts_allowed": true,
+          "tithe_enforced": false,
+          "multiplier": 1.0,
+          "settle_only": false
+        },
+        "offerings": [],
+        "prohibitions": []
+      },
+      "hidden_message": "Veil 4: Temple Codes masks Waters."
+    },
+    {
+      "day": "Thursday",
+      "yoruba_name": "Ọjọ́ Bọ̀",
+      "archetype": "Ọ̀yá-Èṣù²",
+      "spiral_time": {
+        "btc_height": 780576,
+        "veil_number": 5,
+        "veil_esoteric": "Cosmic Cycles",
+        "veil_archetypal": "Stone",
+        "five_layer_orisa": {
+          "day": "Ọ̀yá",
+          "week": "Èṣù",
+          "moon": "Èṣù",
+          "year": "Èṣù",
+          "jubilee": "Èṣù"
+        },
+        "moon": {
+          "number": 1,
+          "name": "Dawn Moon",
+          "orisa": "Èṣù",
+          "star_anchor": "Pleiades"
+        },
+        "gates": {
+          "active": "NO_GATE",
+          "eshu_squared": false,
+          "sabbath": false,
+          "void": false
+        }
+      },
+      "frequency_hz": 741.0,
+      "ritual_practice": {
+        "mantra": "I align with Ọ̀yá at the crossroads of Stone, trusting the spiral.",
+        "crypto": {
+          "minting_active": true,
+          "new_contracts_allowed": true,
+          "tithe_enforced": false,
+          "multiplier": 1.0,
+          "settle_only": false
+        },
+        "offerings": [],
+        "prohibitions": []
+      },
+      "hidden_message": "Veil 5: Cosmic Cycles masks Stone."
+    },
+    {
+      "day": "Friday",
+      "yoruba_name": "Ọjọ́ Ẹ̀tì",
+      "archetype": "Ògún-Èṣù²",
+      "spiral_time": {
+        "btc_height": 780720,
+        "veil_number": 6,
+        "veil_esoteric": "Chaos & Fractals",
+        "veil_archetypal": "Rhythm",
+        "five_layer_orisa": {
+          "day": "Ògún",
+          "week": "Èṣù",
+          "moon": "Èṣù",
+          "year": "Èṣù",
+          "jubilee": "Èṣù"
+        },
+        "moon": {
+          "number": 1,
+          "name": "Dawn Moon",
+          "orisa": "Èṣù",
+          "star_anchor": "Pleiades"
+        },
+        "gates": {
+          "active": "NO_GATE",
+          "eshu_squared": false,
+          "sabbath": false,
+          "void": false
+        }
+      },
+      "frequency_hz": 852.0,
+      "ritual_practice": {
+        "mantra": "I align with Ògún at the crossroads of Rhythm, trusting the spiral.",
+        "crypto": {
+          "minting_active": true,
+          "new_contracts_allowed": true,
+          "tithe_enforced": false,
+          "multiplier": 1.0,
+          "settle_only": false
+        },
+        "offerings": [],
+        "prohibitions": []
+      },
+      "hidden_message": "Veil 6: Chaos & Fractals masks Rhythm."
+    },
+    {
+      "day": "Saturday",
+      "yoruba_name": "Ọjọ́ Àbámẹ́ta",
+      "archetype": "Ọbàtálá-Èṣù²",
+      "spiral_time": {
+        "btc_height": 780864,
+        "veil_number": 7,
+        "veil_esoteric": "Harmonics",
+        "veil_archetypal": "Union",
+        "five_layer_orisa": {
+          "day": "Ọbàtálá",
+          "week": "Ṣàngó",
+          "moon": "Èṣù",
+          "year": "Èṣù",
+          "jubilee": "Èṣù"
+        },
+        "moon": {
+          "number": 1,
+          "name": "Dawn Moon",
+          "orisa": "Èṣù",
+          "star_anchor": "Pleiades"
+        },
+        "gates": {
+          "active": "SABBATH",
+          "eshu_squared": false,
+          "sabbath": true,
+          "void": false
+        }
+      },
+      "frequency_hz": 963.0,
+      "ritual_practice": {
+        "mantra": "I align with Ọbàtálá at the crossroads of Union, trusting the spiral.",
+        "crypto": {
+          "minting_active": true,
+          "new_contracts_allowed": false,
+          "tithe_enforced": false,
+          "multiplier": 1.1,
+          "settle_only": true
+        },
+        "offerings": [
+          "Ọbàtálá: White cloth, coconut milk, calm reflection"
+        ],
+        "prohibitions": [
+          "No new contract signatures",
+          "No aggressive trading",
+          "Settle-only mode in treasury"
+        ]
+      },
+      "hidden_message": "Veil 7: Harmonics masks Union."
+    }
+  ]
+}

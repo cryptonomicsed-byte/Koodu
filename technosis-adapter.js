@@ -48,9 +48,13 @@ function post(url, data) {
  * Technosis Adapter for Swibe & Ecosystem
  */
 class TechnosisAdapter {
-  constructor() {
+  /**
+   * @param {number} [blockHeight] - BTC block height for spiral calendar. Omit to estimate.
+   */
+  constructor(blockHeight) {
     this.currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
     this.codex = this.loadCodex(this.currentDay);
+    this.spiral = new SpiralCalendar(blockHeight);
   }
 
   loadCodex(day) {

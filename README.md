@@ -39,15 +39,19 @@ ritual-codex/
 ├── codex.md                    # Full 7-day ritual codex document
 │                                 (49-facet grids + 20 Sacred 7s + all daily rituals)
 ├── json/                       # Machine-readable daily resonance files
-│   ├── sunday.json
-│   ├── monday.json
-│   ├── tuesday.json
-│   ├── wednesday.json
-│   ├── thursday.json
-│   ├── friday.json
-│   └── saturday.json
+│   ├── sunday.json … saturday.json
+├── src/                        # Julia (Ọ̀ṢỌ́VM-native) sacred time system
+│   ├── time/sacred_time.jl     #   BTC anchoring, 5-layer Òrìṣà, ritual gates
+│   ├── calendar/spiral_calendar.jl  # 13-moon year, Jubilee, almanac generation
+│   └── bridge/organism_integration.jl  # Organism-core event bridge
+├── data/
+│   └── year_1_almanac.json     # Generated first-week almanac sample
+├── btc-time.js                 # BTC Time engine — block height as sovereign clock
+├── spiral-calendar.js          # Spiral Calendar — BTC + Gregorian convergence
+├── technosis-adapter.js        # Ecosystem bridge (Swibe v1.1 + Spiral Calendar)
 ├── swibe-skill/                # Swibe automation skill
 │   └── daily_routine.swibe     # Auto-loads daily config at startup
+├── README-SPIRAL.md            # Full spiral calendar documentation
 └── README.md
 ```
 
