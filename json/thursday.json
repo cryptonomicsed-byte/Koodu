@@ -2,60 +2,256 @@
   "day": "Thursday",
   "yoruba_name": "Ọjọ́ Ìbọ̀rì",
   "archetype": "Ọya",
-  "principle": "Vibration",
+  "principle": "Rhythm",
   "tone": "Sol (G)",
   "frequency": "741 Hz",
   "color": "Burgundy, Maroon, and Purple",
   "facets": [
-    { "id": 1, "name": "Day of the Week", "value": "Thursday" },
-    { "id": 2, "name": "Planetary Ruler", "value": "Jupiter (expansion, upheaval, divine storms)" },
-    { "id": 3, "name": "Chakra", "value": "Throat Chakra (voice, winds of truth)" },
-    { "id": 4, "name": "Tone (Music)", "value": "Sol (G) – 741 Hz" },
-    { "id": 5, "name": "Hermetic Principle", "value": "Vibration – “Nothing rests; everything moves”" },
-    { "id": 6, "name": "Element", "value": "Air (tempest, breath, mind)" },
-    { "id": 7, "name": "Òrìṣà", "value": "Ọya" },
-    { "id": 8, "name": "Òrìṣà Color", "value": "Burgundy, Maroon, Deep Purple" },
-    { "id": 9, "name": "Endocrine Gland", "value": "Thyroid (expression and energetic balance)" },
-    { "id": 10, "name": "Direction", "value": "North" },
-    { "id": 11, "name": "Deadly Sin to Master", "value": "Wrath (reaction without awareness)" },
-    { "id": 12, "name": "Virtue to Embody", "value": "Courage and Self-Transformation" },
-    { "id": 13, "name": "Crypto Sector", "value": "Web3 Media / Journalism / Truth Protocols" },
-    { "id": 14, "name": "Clair Ability", "value": "Claircognizance (sudden knowing from the winds)" },
-    { "id": 15, "name": "Ray of Light", "value": "4th Ray – Harmony through Conflict (Violet-Grey)" },
-    { "id": 16, "name": "Continent", "value": "North America (media, revolution, storm systems)" },
-    { "id": 17, "name": "Veil", "value": "Veil of Chaos" },
-    { "id": 18, "name": "Inanna Gate", "value": "Gate of Storms" },
-    { "id": 19, "name": "Mirror", "value": "The Shadow Self" },
-    { "id": 20, "name": "Wealth Type", "value": "Transformational Wealth (death and rebirth cycles)" },
-    { "id": 21, "name": "Heaven Level", "value": "Sixth Heaven – Revolutions and Prophets" },
-    { "id": 22, "name": "Law of Ma’at", "value": "Righteous Judgment" },
-    { "id": 23, "name": "Jacob’s Ladder Rung", "value": "Hod – Communication and Thought" },
-    { "id": 24, "name": "Energy Body", "value": "Etheric Winds / Breath Body" },
-    { "id": 25, "name": "Rose Petal", "value": "Sixth Petal – Chaos into Wisdom" },
-    { "id": 26, "name": "Spirit of God", "value": "Spirit of Storm and Change" },
-    { "id": 27, "name": "Business Archetype", "value": "The Disruptor / Prophet / Activist" },
-    { "id": 28, "name": "Seal of Revelation", "value": "Sixth Seal – Earthquake and Awakening" },
-    { "id": 29, "name": "Trumpet", "value": "Trumpet of Truth" },
-    { "id": 30, "name": "Bowl", "value": "Bowl of Incense Smoke or Feathers" },
-    { "id": 31, "name": "Spiritual Discipline", "value": "Storm walking, deep breathing, shadow journaling" },
-    { "id": 32, "name": "Metal (Alchemy)", "value": "Uranium (change agent, cosmic rebellion)" },
-    { "id": 33, "name": "Alchemy Stage", "value": "Distillation (refinement through fire and air)" },
-    { "id": 34, "name": "Church of Revelation", "value": "Philadelphia – Brotherhood through Trials" },
-    { "id": 35, "name": "Wonder of the World", "value": "Colossus of Rhodes (storm protector)" },
-    { "id": 36, "name": "Psychological Shadow", "value": "Suppression, fear of change" },
-    { "id": 37, "name": "Tech Temptation", "value": "Oversharing, emotional volatility on social platforms" },
-    { "id": 38, "name": "Business Department", "value": "Media, Content, Transparency" },
-    { "id": 39, "name": "Consciousness Level", "value": "Liberation and Insight" },
-    { "id": 40, "name": "Astrological Ruler", "value": "Jupiter" },
-    { "id": 41, "name": "Body Part", "value": "Lungs, breath, vocal cords" },
-    { "id": 42, "name": "Color (Traditional Chakra)", "value": "Blue" },
-    { "id": 43, "name": "Animal Totem", "value": "Vulture or Crow (ancient wind walkers)" },
-    { "id": 44, "name": "Season", "value": "Early Winter or Storm Season" },
-    { "id": 45, "name": "Moon Phase", "value": "First Quarter (intention and energy shift)" },
-    { "id": 46, "name": "Astrological Modality", "value": "Mutable" },
-    { "id": 47, "name": "Astrological Element", "value": "Air" },
-    { "id": 48, "name": "Astrological House", "value": "9th House (higher knowledge and expansion)" },
-    { "id": 49, "name": "Custom Key", "value": "Feather, wind chime, or stormwater vial" }
+    {
+      "id": 1,
+      "name": "Day of the Week",
+      "value": "Thursday"
+    },
+    {
+      "id": 2,
+      "name": "Planetary Ruler",
+      "value": "Jupiter (expansion, upheaval, divine storms)"
+    },
+    {
+      "id": 3,
+      "name": "Chakra",
+      "value": "Throat Chakra (voice, winds of truth)"
+    },
+    {
+      "id": 4,
+      "name": "Tone (Music)",
+      "value": "Sol (G) – 741 Hz"
+    },
+    {
+      "id": 5,
+      "name": "Hermetic Principle",
+      "value": "Rhythm"
+    },
+    {
+      "id": 6,
+      "name": "Element",
+      "value": "Air (tempest, breath, mind)"
+    },
+    {
+      "id": 7,
+      "name": "Òrìṣà",
+      "value": "Ọya"
+    },
+    {
+      "id": 8,
+      "name": "Òrìṣà Color",
+      "value": "Burgundy, Maroon, Deep Purple"
+    },
+    {
+      "id": 9,
+      "name": "Endocrine Gland",
+      "value": "Thyroid (expression and energetic balance)"
+    },
+    {
+      "id": 10,
+      "name": "Direction",
+      "value": "North"
+    },
+    {
+      "id": 11,
+      "name": "Deadly Sin to Master",
+      "value": "Wrath (reaction without awareness)"
+    },
+    {
+      "id": 12,
+      "name": "Virtue to Embody",
+      "value": "Courage and Self-Transformation"
+    },
+    {
+      "id": 13,
+      "name": "Crypto Sector",
+      "value": "Web3 Media / Journalism / Truth Protocols"
+    },
+    {
+      "id": 14,
+      "name": "Clair Ability",
+      "value": "Claircognizance (sudden knowing from the winds)"
+    },
+    {
+      "id": 15,
+      "name": "Ray of Light",
+      "value": "4th Ray – Harmony through Conflict (Violet-Grey)"
+    },
+    {
+      "id": 16,
+      "name": "Continent",
+      "value": "North America (media, revolution, storm systems)"
+    },
+    {
+      "id": 17,
+      "name": "Veil",
+      "value": "Veil of Chaos"
+    },
+    {
+      "id": 18,
+      "name": "Inanna Gate",
+      "value": "Gate of Storms"
+    },
+    {
+      "id": 19,
+      "name": "Mirror",
+      "value": "The Shadow Self"
+    },
+    {
+      "id": 20,
+      "name": "Wealth Type",
+      "value": "Transformational Wealth (death and rebirth cycles)"
+    },
+    {
+      "id": 21,
+      "name": "Heaven Level",
+      "value": "Sixth Heaven – Revolutions and Prophets"
+    },
+    {
+      "id": 22,
+      "name": "Law of Ma’at",
+      "value": "Righteous Judgment"
+    },
+    {
+      "id": 23,
+      "name": "Jacob’s Ladder Rung",
+      "value": "Hod – Communication and Thought"
+    },
+    {
+      "id": 24,
+      "name": "Energy Body",
+      "value": "Etheric Winds / Breath Body"
+    },
+    {
+      "id": 25,
+      "name": "Rose Petal",
+      "value": "Sixth Petal – Chaos into Wisdom"
+    },
+    {
+      "id": 26,
+      "name": "Spirit of God",
+      "value": "Spirit of Storm and Change"
+    },
+    {
+      "id": 27,
+      "name": "Business Archetype",
+      "value": "The Disruptor / Prophet / Activist"
+    },
+    {
+      "id": 28,
+      "name": "Seal of Revelation",
+      "value": "Sixth Seal – Earthquake and Awakening"
+    },
+    {
+      "id": 29,
+      "name": "Trumpet",
+      "value": "Trumpet of Truth"
+    },
+    {
+      "id": 30,
+      "name": "Bowl",
+      "value": "Bowl of Incense Smoke or Feathers"
+    },
+    {
+      "id": 31,
+      "name": "Spiritual Discipline",
+      "value": "Storm walking, deep breathing, shadow journaling"
+    },
+    {
+      "id": 32,
+      "name": "Metal (Alchemy)",
+      "value": "Uranium (change agent, cosmic rebellion)"
+    },
+    {
+      "id": 33,
+      "name": "Alchemy Stage",
+      "value": "Distillation (refinement through fire and air)"
+    },
+    {
+      "id": 34,
+      "name": "Church of Revelation",
+      "value": "Philadelphia – Brotherhood through Trials"
+    },
+    {
+      "id": 35,
+      "name": "Wonder of the World",
+      "value": "Colossus of Rhodes (storm protector)"
+    },
+    {
+      "id": 36,
+      "name": "Psychological Shadow",
+      "value": "Suppression, fear of change"
+    },
+    {
+      "id": 37,
+      "name": "Tech Temptation",
+      "value": "Oversharing, emotional volatility on social platforms"
+    },
+    {
+      "id": 38,
+      "name": "Business Department",
+      "value": "Media, Content, Transparency"
+    },
+    {
+      "id": 39,
+      "name": "Consciousness Level",
+      "value": "Liberation and Insight"
+    },
+    {
+      "id": 40,
+      "name": "Astrological Ruler",
+      "value": "Jupiter"
+    },
+    {
+      "id": 41,
+      "name": "Body Part",
+      "value": "Lungs, breath, vocal cords"
+    },
+    {
+      "id": 42,
+      "name": "Color (Traditional Chakra)",
+      "value": "Blue"
+    },
+    {
+      "id": 43,
+      "name": "Animal Totem",
+      "value": "Vulture or Crow (ancient wind walkers)"
+    },
+    {
+      "id": 44,
+      "name": "Season",
+      "value": "Early Winter or Storm Season"
+    },
+    {
+      "id": 45,
+      "name": "Moon Phase",
+      "value": "First Quarter (intention and energy shift)"
+    },
+    {
+      "id": 46,
+      "name": "Astrological Modality",
+      "value": "Mutable"
+    },
+    {
+      "id": 47,
+      "name": "Astrological Element",
+      "value": "Air"
+    },
+    {
+      "id": 48,
+      "name": "Astrological House",
+      "value": "9th House (higher knowledge and expansion)"
+    },
+    {
+      "id": 49,
+      "name": "Custom Key",
+      "value": "Feather, wind chime, or stormwater vial"
+    }
   ],
   "house_role": {
     "name": "Reina",
@@ -67,9 +263,18 @@
   "ritual_practice": {
     "dress": "Maroon, burgundy, or deep violet",
     "glasses": "Purple or dark-tinted lenses",
-    "ritual_objects": ["Feather", "incense", "stormwater", "bell chime"],
+    "ritual_objects": [
+      "Feather",
+      "incense",
+      "stormwater",
+      "bell chime"
+    ],
     "tone_activation": "Bell or bowl tuned to G (741 Hz)",
-    "food": ["Spiced foods", "root vegetables", "anything grounding"],
+    "food": [
+      "Spiced foods",
+      "root vegetables",
+      "anything grounding"
+    ],
     "movement": "Fast breathwork, stomping dance, storm meditation",
     "mantra": "I dance through chaos. I become the storm.",
     "crypto_focus": "Web3 truth tech, media DAOs, revolutionary projects",

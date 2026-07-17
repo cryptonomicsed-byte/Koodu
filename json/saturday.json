@@ -2,60 +2,256 @@
   "day": "Saturday",
   "yoruba_name": "Ọjọ́ Ọbàtálá",
   "archetype": "Ọbàtálá",
-  "principle": "The All is Mind",
+  "principle": "Gender",
   "tone": "Ti (B)",
   "frequency": "963 Hz",
   "color": "White and Clear Crystal",
   "facets": [
-    { "id": 1, "name": "Day of the Week", "value": "Saturday" },
-    { "id": 2, "name": "Planetary Ruler", "value": "Saturn (Karmic order, sacred pause, ancestral contracts)" },
-    { "id": 3, "name": "Chakra", "value": "Crown Chakra" },
-    { "id": 4, "name": "Tone", "value": "Ti (B) — 963 Hz" },
-    { "id": 5, "name": "Hermetic Principle", "value": "The All is Mind" },
-    { "id": 6, "name": "Element", "value": "Air + Ether" },
-    { "id": 7, "name": "Orisha", "value": "Ọbàtálá" },
-    { "id": 8, "name": "Orisha Color", "value": "White" },
-    { "id": 9, "name": "Endocrine Gland", "value": "Pineal Gland" },
-    { "id": 10, "name": "Direction", "value": "North" },
-    { "id": 11, "name": "Sin to Master", "value": "Pride (Spiritual Arrogance)" },
-    { "id": 12, "name": "Virtue to Embody", "value": "Humility, Wisdom, Sacred Rest" },
-    { "id": 13, "name": "Crypto Sector", "value": "Ethical DAOs / Governance Protocols / Sacred Architectures" },
-    { "id": 14, "name": "Clair Ability", "value": "Claircognizance (Clear Knowing)" },
-    { "id": 15, "name": "Ray of Light", "value": "7th Ray — Divine Order, Ceremonial Magic (Violet-White)" },
-    { "id": 16, "name": "Continent", "value": "Antarctica / Himalayan Peaks (Silence, Crown of the World)" },
-    { "id": 17, "name": "Veil", "value": "Veil of Divine Mind" },
-    { "id": 18, "name": "Inanna Gate", "value": "Gate of the Crown" },
-    { "id": 19, "name": "Mirror", "value": "The White Mind / The Higher Self" },
-    { "id": 20, "name": "Wealth Type", "value": "Divine Grace / Sovereign Peace" },
-    { "id": 21, "name": "Heaven Level", "value": "Seventh Heaven — Throne of Creation" },
-    { "id": 22, "name": "Law of Ma’at", "value": "Cosmic Harmony" },
-    { "id": 23, "name": "Jacob’s Ladder Rung", "value": "Keter — Crown of Creation" },
-    { "id": 24, "name": "Energy Body", "value": "Divine Blueprint / Lightbody" },
-    { "id": 25, "name": "Rose Petal", "value": "7th Petal — Enlightened Bloom" },
-    { "id": 26, "name": "Spirit of God", "value": "Spirit of Wisdom and Peace" },
-    { "id": 27, "name": "Business Archetype", "value": "The Oracle / Elder / High Strategist" },
-    { "id": 28, "name": "Seal of Revelation", "value": "Seventh Seal — Silence in Heaven" },
-    { "id": 29, "name": "Trumpet", "value": "Final Trumpet / Trumpet of the Crown" },
-    { "id": 30, "name": "Bowl", "value": "Bowl of Air / Crystal Light" },
-    { "id": 31, "name": "Spiritual Discipline", "value": "Fasting, Meditation, Silence, Light Gazing" },
-    { "id": 32, "name": "Metal (Alchemy)", "value": "Crystal, Quartz, Platinum" },
-    { "id": 33, "name": "Alchemy Stage", "value": "Sublimation (Essence above Form)" },
-    { "id": 34, "name": "Church of Revelation", "value": "Laodicea — Spiritual Wealth and Neutrality" },
-    { "id": 35, "name": "Wonder of the World", "value": "The Great Pyramid (Crown Geometry)" },
-    { "id": 36, "name": "Psychological Shadow", "value": "Rigidity, Spiritual Superiority" },
-    { "id": 37, "name": "Tech Temptation", "value": "AI without Spirit / Soulless Logic" },
-    { "id": 38, "name": "Business Department", "value": "Ethical Governance / Founder's Vision" },
-    { "id": 39, "name": "Consciousness Level", "value": "Cosmic Consciousness" },
-    { "id": 40, "name": "Astrological Ruler", "value": "Saturn" },
-    { "id": 41, "name": "Body Part", "value": "Crown of the Head, Brain Cortex" },
-    { "id": 42, "name": "Color (Chakra)", "value": "Violet + White" },
-    { "id": 43, "name": "Animal Totem", "value": "White Elephant, Dove" },
-    { "id": 44, "name": "Season", "value": "Winter" },
-    { "id": 45, "name": "Moon Phase", "value": "New Moon (Void before Light)" },
-    { "id": 46, "name": "Astrological Modality", "value": "Fixed" },
-    { "id": 47, "name": "Astrological Element", "value": "Air" },
-    { "id": 48, "name": "Astrological House", "value": "12th House — Completion, Transcendence" },
-    { "id": 49, "name": "Custom Key", "value": "Feather Crown, Quartz Wand, White Cloth" }
+    {
+      "id": 1,
+      "name": "Day of the Week",
+      "value": "Saturday"
+    },
+    {
+      "id": 2,
+      "name": "Planetary Ruler",
+      "value": "Saturn (Karmic order, sacred pause, ancestral contracts)"
+    },
+    {
+      "id": 3,
+      "name": "Chakra",
+      "value": "Crown Chakra"
+    },
+    {
+      "id": 4,
+      "name": "Tone",
+      "value": "Ti (B) — 963 Hz"
+    },
+    {
+      "id": 5,
+      "name": "Hermetic Principle",
+      "value": "Gender"
+    },
+    {
+      "id": 6,
+      "name": "Element",
+      "value": "Air + Ether"
+    },
+    {
+      "id": 7,
+      "name": "Orisha",
+      "value": "Ọbàtálá"
+    },
+    {
+      "id": 8,
+      "name": "Orisha Color",
+      "value": "White"
+    },
+    {
+      "id": 9,
+      "name": "Endocrine Gland",
+      "value": "Pineal Gland"
+    },
+    {
+      "id": 10,
+      "name": "Direction",
+      "value": "North"
+    },
+    {
+      "id": 11,
+      "name": "Sin to Master",
+      "value": "Pride (Spiritual Arrogance)"
+    },
+    {
+      "id": 12,
+      "name": "Virtue to Embody",
+      "value": "Humility, Wisdom, Sacred Rest"
+    },
+    {
+      "id": 13,
+      "name": "Crypto Sector",
+      "value": "Ethical DAOs / Governance Protocols / Sacred Architectures"
+    },
+    {
+      "id": 14,
+      "name": "Clair Ability",
+      "value": "Claircognizance (Clear Knowing)"
+    },
+    {
+      "id": 15,
+      "name": "Ray of Light",
+      "value": "7th Ray — Divine Order, Ceremonial Magic (Violet-White)"
+    },
+    {
+      "id": 16,
+      "name": "Continent",
+      "value": "Antarctica / Himalayan Peaks (Silence, Crown of the World)"
+    },
+    {
+      "id": 17,
+      "name": "Veil",
+      "value": "Veil of Divine Mind"
+    },
+    {
+      "id": 18,
+      "name": "Inanna Gate",
+      "value": "Gate of the Crown"
+    },
+    {
+      "id": 19,
+      "name": "Mirror",
+      "value": "The White Mind / The Higher Self"
+    },
+    {
+      "id": 20,
+      "name": "Wealth Type",
+      "value": "Divine Grace / Sovereign Peace"
+    },
+    {
+      "id": 21,
+      "name": "Heaven Level",
+      "value": "Seventh Heaven — Throne of Creation"
+    },
+    {
+      "id": 22,
+      "name": "Law of Ma’at",
+      "value": "Cosmic Harmony"
+    },
+    {
+      "id": 23,
+      "name": "Jacob’s Ladder Rung",
+      "value": "Keter — Crown of Creation"
+    },
+    {
+      "id": 24,
+      "name": "Energy Body",
+      "value": "Divine Blueprint / Lightbody"
+    },
+    {
+      "id": 25,
+      "name": "Rose Petal",
+      "value": "7th Petal — Enlightened Bloom"
+    },
+    {
+      "id": 26,
+      "name": "Spirit of God",
+      "value": "Spirit of Wisdom and Peace"
+    },
+    {
+      "id": 27,
+      "name": "Business Archetype",
+      "value": "The Oracle / Elder / High Strategist"
+    },
+    {
+      "id": 28,
+      "name": "Seal of Revelation",
+      "value": "Seventh Seal — Silence in Heaven"
+    },
+    {
+      "id": 29,
+      "name": "Trumpet",
+      "value": "Final Trumpet / Trumpet of the Crown"
+    },
+    {
+      "id": 30,
+      "name": "Bowl",
+      "value": "Bowl of Air / Crystal Light"
+    },
+    {
+      "id": 31,
+      "name": "Spiritual Discipline",
+      "value": "Fasting, Meditation, Silence, Light Gazing"
+    },
+    {
+      "id": 32,
+      "name": "Metal (Alchemy)",
+      "value": "Crystal, Quartz, Platinum"
+    },
+    {
+      "id": 33,
+      "name": "Alchemy Stage",
+      "value": "Sublimation (Essence above Form)"
+    },
+    {
+      "id": 34,
+      "name": "Church of Revelation",
+      "value": "Laodicea — Spiritual Wealth and Neutrality"
+    },
+    {
+      "id": 35,
+      "name": "Wonder of the World",
+      "value": "The Great Pyramid (Crown Geometry)"
+    },
+    {
+      "id": 36,
+      "name": "Psychological Shadow",
+      "value": "Rigidity, Spiritual Superiority"
+    },
+    {
+      "id": 37,
+      "name": "Tech Temptation",
+      "value": "AI without Spirit / Soulless Logic"
+    },
+    {
+      "id": 38,
+      "name": "Business Department",
+      "value": "Ethical Governance / Founder's Vision"
+    },
+    {
+      "id": 39,
+      "name": "Consciousness Level",
+      "value": "Cosmic Consciousness"
+    },
+    {
+      "id": 40,
+      "name": "Astrological Ruler",
+      "value": "Saturn"
+    },
+    {
+      "id": 41,
+      "name": "Body Part",
+      "value": "Crown of the Head, Brain Cortex"
+    },
+    {
+      "id": 42,
+      "name": "Color (Chakra)",
+      "value": "Violet + White"
+    },
+    {
+      "id": 43,
+      "name": "Animal Totem",
+      "value": "White Elephant, Dove"
+    },
+    {
+      "id": 44,
+      "name": "Season",
+      "value": "Winter"
+    },
+    {
+      "id": 45,
+      "name": "Moon Phase",
+      "value": "New Moon (Void before Light)"
+    },
+    {
+      "id": 46,
+      "name": "Astrological Modality",
+      "value": "Fixed"
+    },
+    {
+      "id": 47,
+      "name": "Astrological Element",
+      "value": "Air"
+    },
+    {
+      "id": 48,
+      "name": "Astrological House",
+      "value": "12th House — Completion, Transcendence"
+    },
+    {
+      "id": 49,
+      "name": "Custom Key",
+      "value": "Feather Crown, Quartz Wand, White Cloth"
+    }
   ],
   "house_role": {
     "name": "Blanca",
@@ -67,9 +263,20 @@
   "ritual_practice": {
     "dress": "All white — flowing robes, uncluttered adornment",
     "glasses": "Clear or violet-tinted lenses",
-    "ritual_objects": ["Quartz", "white feather", "white candle", "ivory", "silver"],
+    "ritual_objects": [
+      "Quartz",
+      "white feather",
+      "white candle",
+      "ivory",
+      "silver"
+    ],
     "tone_activation": "Crystal bowl or chime tuned to Ti (B) — 963 Hz",
-    "food": ["Fasting or light meals", "coconut", "white yam", "white rice"],
+    "food": [
+      "Fasting or light meals",
+      "coconut",
+      "white yam",
+      "white rice"
+    ],
     "movement": "Walking meditation, sky gazing, breath focus",
     "mantra": "I am still. I know. I trust. Divine mind lives in me.",
     "crypto_focus": "Sacred protocols, ethical DAOs, AI with purpose",

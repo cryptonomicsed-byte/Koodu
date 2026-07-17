@@ -2,60 +2,256 @@
   "day": "Friday",
   "yoruba_name": "Ọjọ́ Ògún",
   "archetype": "Ògún",
-  "principle": "Cause and Effect",
+  "principle": "Polarity",
   "tone": "La (A)",
   "frequency": "852 Hz",
   "color": "Dark Green and Black",
   "facets": [
-    { "id": 1, "name": "Day of the Week", "value": "Friday" },
-    { "id": 2, "name": "Planetary Ruler", "value": "Saturn (discipline, structure, legacy)" },
-    { "id": 3, "name": "Chakra", "value": "Root Chakra (grounding, action, survival)" },
-    { "id": 4, "name": "Tone (Music)", "value": "La (A) – 852 Hz" },
-    { "id": 5, "name": "Hermetic Principle", "value": "Cause and Effect – “Every cause has its effect”" },
-    { "id": 6, "name": "Element", "value": "Earth + Metal (tools, labor, precision)" },
-    { "id": 7, "name": "Òrìṣà", "value": "Ògún" },
-    { "id": 8, "name": "Òrìṣà Color", "value": "Dark Green and Black" },
-    { "id": 9, "name": "Endocrine Gland", "value": "Adrenal Glands (strength, fight/flight mastery)" },
-    { "id": 10, "name": "Direction", "value": "West (forge of destiny)" },
-    { "id": 11, "name": "Deadly Sin to Master", "value": "Greed (attachment to material without spirit)" },
-    { "id": 12, "name": "Virtue to Embody", "value": "Dedication, Focus, Mastery" },
-    { "id": 13, "name": "Crypto Sector", "value": "Real-World Assets (RWA), Infrastructure Projects" },
-    { "id": 14, "name": "Clair Ability", "value": "Clairtangency (knowing through touch, builders' knowing)" },
-    { "id": 15, "name": "Ray of Light", "value": "1st Ray – Will and Power (Deep Red)" },
-    { "id": 16, "name": "Continent", "value": "South America (Amazon, iron, land warriors)" },
-    { "id": 17, "name": "Veil", "value": "Veil of Labor" },
-    { "id": 18, "name": "Inanna Gate", "value": "Gate of Strength" },
-    { "id": 19, "name": "Mirror", "value": "The Ironworker / The Worker Within" },
-    { "id": 20, "name": "Wealth Type", "value": "Material Mastery and Legacy Creation" },
-    { "id": 21, "name": "Heaven Level", "value": "Fourth Heaven – Realm of Service" },
-    { "id": 22, "name": "Law of Ma’at", "value": "Justice through Action" },
-    { "id": 23, "name": "Jacob’s Ladder Rung", "value": "Netzach – Endurance, Fortitude" },
-    { "id": 24, "name": "Energy Body", "value": "Physical Body + Etheric Layer" },
-    { "id": 25, "name": "Rose Petal", "value": "Fourth Petal – Bloom of Strength" },
-    { "id": 26, "name": "Spirit of God", "value": "Spirit of Precision and Craft" },
-    { "id": 27, "name": "Business Archetype", "value": "The Builder / Engineer / Warrior" },
-    { "id": 28, "name": "Seal of Revelation", "value": "Fourth Seal – Scales of Labor" },
-    { "id": 29, "name": "Trumpet", "value": "Trumpet of the Workers" },
-    { "id": 30, "name": "Bowl", "value": "Bowl of Iron, Clay, or Earth" },
-    { "id": 31, "name": "Spiritual Discipline", "value": "Physical labor, martial arts, building sacred tools" },
-    { "id": 32, "name": "Metal (Alchemy)", "value": "Iron (the sacred metal of Ògún)" },
-    { "id": 33, "name": "Alchemy Stage", "value": "Calcination (burning away ego to forge steel)" },
-    { "id": 34, "name": "Church of Revelation", "value": "Thyatira – Work and Perseverance" },
-    { "id": 35, "name": "Wonder of the World", "value": "Machu Picchu (precision stonework)" },
-    { "id": 36, "name": "Psychological Shadow", "value": "Obsession, burnout, cold detachment" },
-    { "id": 37, "name": "Tech Temptation", "value": "Automation without intention, soulless engineering" },
-    { "id": 38, "name": "Business Department", "value": "Operations, Engineering, Manufacturing" },
-    { "id": 39, "name": "Consciousness Level", "value": "Constructive Power and Responsibility" },
-    { "id": 40, "name": "Astrological Ruler", "value": "Saturn" },
-    { "id": 41, "name": "Body Part", "value": "Legs, bones, and hands (labor and structure)" },
-    { "id": 42, "name": "Color (Traditional Chakra)", "value": "Deep Red or Black" },
-    { "id": 43, "name": "Animal Totem", "value": "Blacksmith Beetle or Bull" },
-    { "id": 44, "name": "Season", "value": "Autumn (harvest through labor)" },
-    { "id": 45, "name": "Moon Phase", "value": "Waxing Gibbous (build-up and productivity)" },
-    { "id": 46, "name": "Astrological Modality", "value": "Cardinal" },
-    { "id": 47, "name": "Astrological Element", "value": "Earth" },
-    { "id": 48, "name": "Astrological House", "value": "10th House (career, discipline, achievement)" },
-    { "id": 49, "name": "Custom Key", "value": "Iron Nail, Machete, Forge Stone, or Hammer Amulet" }
+    {
+      "id": 1,
+      "name": "Day of the Week",
+      "value": "Friday"
+    },
+    {
+      "id": 2,
+      "name": "Planetary Ruler",
+      "value": "Saturn (discipline, structure, legacy)"
+    },
+    {
+      "id": 3,
+      "name": "Chakra",
+      "value": "Root Chakra (grounding, action, survival)"
+    },
+    {
+      "id": 4,
+      "name": "Tone (Music)",
+      "value": "La (A) – 852 Hz"
+    },
+    {
+      "id": 5,
+      "name": "Hermetic Principle",
+      "value": "Polarity"
+    },
+    {
+      "id": 6,
+      "name": "Element",
+      "value": "Earth + Metal (tools, labor, precision)"
+    },
+    {
+      "id": 7,
+      "name": "Òrìṣà",
+      "value": "Ògún"
+    },
+    {
+      "id": 8,
+      "name": "Òrìṣà Color",
+      "value": "Dark Green and Black"
+    },
+    {
+      "id": 9,
+      "name": "Endocrine Gland",
+      "value": "Adrenal Glands (strength, fight/flight mastery)"
+    },
+    {
+      "id": 10,
+      "name": "Direction",
+      "value": "West (forge of destiny)"
+    },
+    {
+      "id": 11,
+      "name": "Deadly Sin to Master",
+      "value": "Greed (attachment to material without spirit)"
+    },
+    {
+      "id": 12,
+      "name": "Virtue to Embody",
+      "value": "Dedication, Focus, Mastery"
+    },
+    {
+      "id": 13,
+      "name": "Crypto Sector",
+      "value": "Real-World Assets (RWA), Infrastructure Projects"
+    },
+    {
+      "id": 14,
+      "name": "Clair Ability",
+      "value": "Clairtangency (knowing through touch, builders' knowing)"
+    },
+    {
+      "id": 15,
+      "name": "Ray of Light",
+      "value": "1st Ray – Will and Power (Deep Red)"
+    },
+    {
+      "id": 16,
+      "name": "Continent",
+      "value": "South America (Amazon, iron, land warriors)"
+    },
+    {
+      "id": 17,
+      "name": "Veil",
+      "value": "Veil of Labor"
+    },
+    {
+      "id": 18,
+      "name": "Inanna Gate",
+      "value": "Gate of Strength"
+    },
+    {
+      "id": 19,
+      "name": "Mirror",
+      "value": "The Ironworker / The Worker Within"
+    },
+    {
+      "id": 20,
+      "name": "Wealth Type",
+      "value": "Material Mastery and Legacy Creation"
+    },
+    {
+      "id": 21,
+      "name": "Heaven Level",
+      "value": "Fourth Heaven – Realm of Service"
+    },
+    {
+      "id": 22,
+      "name": "Law of Ma’at",
+      "value": "Justice through Action"
+    },
+    {
+      "id": 23,
+      "name": "Jacob’s Ladder Rung",
+      "value": "Netzach – Endurance, Fortitude"
+    },
+    {
+      "id": 24,
+      "name": "Energy Body",
+      "value": "Physical Body + Etheric Layer"
+    },
+    {
+      "id": 25,
+      "name": "Rose Petal",
+      "value": "Fourth Petal – Bloom of Strength"
+    },
+    {
+      "id": 26,
+      "name": "Spirit of God",
+      "value": "Spirit of Precision and Craft"
+    },
+    {
+      "id": 27,
+      "name": "Business Archetype",
+      "value": "The Builder / Engineer / Warrior"
+    },
+    {
+      "id": 28,
+      "name": "Seal of Revelation",
+      "value": "Fourth Seal – Scales of Labor"
+    },
+    {
+      "id": 29,
+      "name": "Trumpet",
+      "value": "Trumpet of the Workers"
+    },
+    {
+      "id": 30,
+      "name": "Bowl",
+      "value": "Bowl of Iron, Clay, or Earth"
+    },
+    {
+      "id": 31,
+      "name": "Spiritual Discipline",
+      "value": "Physical labor, martial arts, building sacred tools"
+    },
+    {
+      "id": 32,
+      "name": "Metal (Alchemy)",
+      "value": "Iron (the sacred metal of Ògún)"
+    },
+    {
+      "id": 33,
+      "name": "Alchemy Stage",
+      "value": "Calcination (burning away ego to forge steel)"
+    },
+    {
+      "id": 34,
+      "name": "Church of Revelation",
+      "value": "Thyatira – Work and Perseverance"
+    },
+    {
+      "id": 35,
+      "name": "Wonder of the World",
+      "value": "Machu Picchu (precision stonework)"
+    },
+    {
+      "id": 36,
+      "name": "Psychological Shadow",
+      "value": "Obsession, burnout, cold detachment"
+    },
+    {
+      "id": 37,
+      "name": "Tech Temptation",
+      "value": "Automation without intention, soulless engineering"
+    },
+    {
+      "id": 38,
+      "name": "Business Department",
+      "value": "Operations, Engineering, Manufacturing"
+    },
+    {
+      "id": 39,
+      "name": "Consciousness Level",
+      "value": "Constructive Power and Responsibility"
+    },
+    {
+      "id": 40,
+      "name": "Astrological Ruler",
+      "value": "Saturn"
+    },
+    {
+      "id": 41,
+      "name": "Body Part",
+      "value": "Legs, bones, and hands (labor and structure)"
+    },
+    {
+      "id": 42,
+      "name": "Color (Traditional Chakra)",
+      "value": "Deep Red or Black"
+    },
+    {
+      "id": 43,
+      "name": "Animal Totem",
+      "value": "Blacksmith Beetle or Bull"
+    },
+    {
+      "id": 44,
+      "name": "Season",
+      "value": "Autumn (harvest through labor)"
+    },
+    {
+      "id": 45,
+      "name": "Moon Phase",
+      "value": "Waxing Gibbous (build-up and productivity)"
+    },
+    {
+      "id": 46,
+      "name": "Astrological Modality",
+      "value": "Cardinal"
+    },
+    {
+      "id": 47,
+      "name": "Astrological Element",
+      "value": "Earth"
+    },
+    {
+      "id": 48,
+      "name": "Astrological House",
+      "value": "10th House (career, discipline, achievement)"
+    },
+    {
+      "id": 49,
+      "name": "Custom Key",
+      "value": "Iron Nail, Machete, Forge Stone, or Hammer Amulet"
+    }
   ],
   "house_role": {
     "name": "Tierra",
@@ -67,9 +263,19 @@
   "ritual_practice": {
     "dress": "Dark green, earthy brown, or black",
     "glasses": "Black or earthy-tinted lenses",
-    "ritual_objects": ["Iron item", "earth bowl", "obsidian stone"],
+    "ritual_objects": [
+      "Iron item",
+      "earth bowl",
+      "obsidian stone"
+    ],
     "tone_activation": "Bell or bowl tuned to La (A) – 852 Hz",
-    "food": ["Root vegetables", "grains", "cooked greens", "yuca", "plantain"],
+    "food": [
+      "Root vegetables",
+      "grains",
+      "cooked greens",
+      "yuca",
+      "plantain"
+    ],
     "movement": "Martial arts, strength training, ritual labor or walking meditation",
     "mantra": "I forge my path through strength and focus.",
     "crypto_focus": "Infrastructure, tokenized real assets, on-chain utility",

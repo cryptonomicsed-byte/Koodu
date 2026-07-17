@@ -2,60 +2,256 @@
   "day": "Tuesday",
   "yoruba_name": "Ọjọ́ Ìṣẹ́gun",
   "archetype": "Ọ̀ṣun",
-  "principle": "Rhythm",
+  "principle": "Vibration",
   "tone": "Mi (E)",
   "frequency": "528 Hz",
   "color": "Yellow and Gold",
   "facets": [
-    { "id": 1, "name": "Day", "value": "Ọjọ́ Ìṣẹ́gun (Tuesday)" },
-    { "id": 2, "name": "Planetary Ruler", "value": "Venus" },
-    { "id": 3, "name": "Chakra", "value": "Solar Plexus (Ìpinnu Ọkàn)" },
-    { "id": 4, "name": "Tone / Frequency", "value": "Mi (E) – 528 Hz" },
-    { "id": 5, "name": "Hermetic Principle", "value": "Rhythm" },
-    { "id": 6, "name": "Element", "value": "Water (Omi)" },
-    { "id": 7, "name": "Òrìṣà", "value": "Ọ̀ṣun" },
-    { "id": 8, "name": "Colors", "value": "Yellow and Gold" },
-    { "id": 9, "name": "Endocrine Gland", "value": "Pancreas" },
-    { "id": 10, "name": "Direction", "value": "Gúúsù (South)" },
-    { "id": 11, "name": "Sin to Master", "value": "Greed → Generous Gratitude" },
-    { "id": 12, "name": "Virtue", "value": "Radiance, Tender Openness" },
-    { "id": 13, "name": "Crypto Sector", "value": "Luxury NFTs, creative tokens" },
-    { "id": 14, "name": "Clair Sense", "value": "Clairsentience (magnetic empathy)" },
-    { "id": 15, "name": "Ray of Light", "value": "2nd Ray – Love & Wisdom" },
-    { "id": 16, "name": "Continent", "value": "South America" },
-    { "id": 17, "name": "Veil", "value": "Veil of Seduction" },
-    { "id": 18, "name": "Inanna Gate", "value": "Gate of Adornments" },
-    { "id": 19, "name": "Mirror", "value": "Sweet Self" },
-    { "id": 20, "name": "Wealth Type", "value": "Magnetic Wealth" },
-    { "id": 21, "name": "Heaven Level", "value": "Third Heaven – Realms of Beauty" },
-    { "id": 22, "name": "Law of Ma’at", "value": "Reciprocity and Offering" },
-    { "id": 23, "name": "Jacob’s Ladder", "value": "Netzach (Victory & Pleasure)" },
-    { "id": 24, "name": "Energy Body", "value": "Mental Body" },
-    { "id": 25, "name": "Rose Petal", "value": "Pleasure and Fertility" },
-    { "id": 26, "name": "Spirit of God", "value": "Spirit of Compassion" },
-    { "id": 27, "name": "Business Archetype", "value": "Seducer / Muse / Stylist" },
-    { "id": 28, "name": "Seal", "value": "Third Seal – Scales of Fairness" },
-    { "id": 29, "name": "Trumpet", "value": "Trumpet of Delight" },
-    { "id": 30, "name": "Bowl", "value": "Bowl of Honey or Perfume" },
-    { "id": 31, "name": "Spiritual Practice", "value": "Self-care, beauty rituals, mirror blessing" },
-    { "id": 32, "name": "Metal", "value": "Copper (Ọ̀ṣun’s metal)" },
-    { "id": 33, "name": "Alchemy Stage", "value": "Separation" },
-    { "id": 34, "name": "Church of Revelation", "value": "Pergamum" },
-    { "id": 35, "name": "Wonder", "value": "Hanging Gardens of Babylon" },
-    { "id": 36, "name": "Shadow Work", "value": "Vanity → Inner Worth" },
-    { "id": 37, "name": "Tech Temptation", "value": "Addiction to image" },
-    { "id": 38, "name": "Business Role", "value": "Branding & Aesthetics" },
-    { "id": 39, "name": "Consciousness Level", "value": "Magnetic Radiance" },
-    { "id": 40, "name": "Astrological Ruler", "value": "Venus" },
-    { "id": 41, "name": "Body Part", "value": "Solar Plexus / Core" },
-    { "id": 42, "name": "Chakra Color", "value": "Yellow (Inner Sun)" },
-    { "id": 43, "name": "Animal Totem", "value": "Peacock" },
-    { "id": 44, "name": "Season", "value": "Spring" },
-    { "id": 45, "name": "Moon Phase", "value": "Waxing Crescent" },
-    { "id": 46, "name": "Astro Modality", "value": "Fixed" },
-    { "id": 47, "name": "Astro Element", "value": "Earth" },
-    { "id": 48, "name": "Astro House", "value": "2nd House" },
-    { "id": 49, "name": "Custom Key", "value": "Mirror or Honey Jar" }
+    {
+      "id": 1,
+      "name": "Day",
+      "value": "Ọjọ́ Ìṣẹ́gun (Tuesday)"
+    },
+    {
+      "id": 2,
+      "name": "Planetary Ruler",
+      "value": "Venus"
+    },
+    {
+      "id": 3,
+      "name": "Chakra",
+      "value": "Solar Plexus (Ìpinnu Ọkàn)"
+    },
+    {
+      "id": 4,
+      "name": "Tone / Frequency",
+      "value": "Mi (E) – 528 Hz"
+    },
+    {
+      "id": 5,
+      "name": "Hermetic Principle",
+      "value": "Vibration"
+    },
+    {
+      "id": 6,
+      "name": "Element",
+      "value": "Water (Omi)"
+    },
+    {
+      "id": 7,
+      "name": "Òrìṣà",
+      "value": "Ọ̀ṣun"
+    },
+    {
+      "id": 8,
+      "name": "Colors",
+      "value": "Yellow and Gold"
+    },
+    {
+      "id": 9,
+      "name": "Endocrine Gland",
+      "value": "Pancreas"
+    },
+    {
+      "id": 10,
+      "name": "Direction",
+      "value": "Gúúsù (South)"
+    },
+    {
+      "id": 11,
+      "name": "Sin to Master",
+      "value": "Greed → Generous Gratitude"
+    },
+    {
+      "id": 12,
+      "name": "Virtue",
+      "value": "Radiance, Tender Openness"
+    },
+    {
+      "id": 13,
+      "name": "Crypto Sector",
+      "value": "Luxury NFTs, creative tokens"
+    },
+    {
+      "id": 14,
+      "name": "Clair Sense",
+      "value": "Clairsentience (magnetic empathy)"
+    },
+    {
+      "id": 15,
+      "name": "Ray of Light",
+      "value": "2nd Ray – Love & Wisdom"
+    },
+    {
+      "id": 16,
+      "name": "Continent",
+      "value": "South America"
+    },
+    {
+      "id": 17,
+      "name": "Veil",
+      "value": "Veil of Seduction"
+    },
+    {
+      "id": 18,
+      "name": "Inanna Gate",
+      "value": "Gate of Adornments"
+    },
+    {
+      "id": 19,
+      "name": "Mirror",
+      "value": "Sweet Self"
+    },
+    {
+      "id": 20,
+      "name": "Wealth Type",
+      "value": "Magnetic Wealth"
+    },
+    {
+      "id": 21,
+      "name": "Heaven Level",
+      "value": "Third Heaven – Realms of Beauty"
+    },
+    {
+      "id": 22,
+      "name": "Law of Ma’at",
+      "value": "Reciprocity and Offering"
+    },
+    {
+      "id": 23,
+      "name": "Jacob’s Ladder",
+      "value": "Netzach (Victory & Pleasure)"
+    },
+    {
+      "id": 24,
+      "name": "Energy Body",
+      "value": "Mental Body"
+    },
+    {
+      "id": 25,
+      "name": "Rose Petal",
+      "value": "Pleasure and Fertility"
+    },
+    {
+      "id": 26,
+      "name": "Spirit of God",
+      "value": "Spirit of Compassion"
+    },
+    {
+      "id": 27,
+      "name": "Business Archetype",
+      "value": "Seducer / Muse / Stylist"
+    },
+    {
+      "id": 28,
+      "name": "Seal",
+      "value": "Third Seal – Scales of Fairness"
+    },
+    {
+      "id": 29,
+      "name": "Trumpet",
+      "value": "Trumpet of Delight"
+    },
+    {
+      "id": 30,
+      "name": "Bowl",
+      "value": "Bowl of Honey or Perfume"
+    },
+    {
+      "id": 31,
+      "name": "Spiritual Practice",
+      "value": "Self-care, beauty rituals, mirror blessing"
+    },
+    {
+      "id": 32,
+      "name": "Metal",
+      "value": "Copper (Ọ̀ṣun’s metal)"
+    },
+    {
+      "id": 33,
+      "name": "Alchemy Stage",
+      "value": "Separation"
+    },
+    {
+      "id": 34,
+      "name": "Church of Revelation",
+      "value": "Pergamum"
+    },
+    {
+      "id": 35,
+      "name": "Wonder",
+      "value": "Hanging Gardens of Babylon"
+    },
+    {
+      "id": 36,
+      "name": "Shadow Work",
+      "value": "Vanity → Inner Worth"
+    },
+    {
+      "id": 37,
+      "name": "Tech Temptation",
+      "value": "Addiction to image"
+    },
+    {
+      "id": 38,
+      "name": "Business Role",
+      "value": "Branding & Aesthetics"
+    },
+    {
+      "id": 39,
+      "name": "Consciousness Level",
+      "value": "Magnetic Radiance"
+    },
+    {
+      "id": 40,
+      "name": "Astrological Ruler",
+      "value": "Venus"
+    },
+    {
+      "id": 41,
+      "name": "Body Part",
+      "value": "Solar Plexus / Core"
+    },
+    {
+      "id": 42,
+      "name": "Chakra Color",
+      "value": "Yellow (Inner Sun)"
+    },
+    {
+      "id": 43,
+      "name": "Animal Totem",
+      "value": "Peacock"
+    },
+    {
+      "id": 44,
+      "name": "Season",
+      "value": "Spring"
+    },
+    {
+      "id": 45,
+      "name": "Moon Phase",
+      "value": "Waxing Crescent"
+    },
+    {
+      "id": 46,
+      "name": "Astro Modality",
+      "value": "Fixed"
+    },
+    {
+      "id": 47,
+      "name": "Astro Element",
+      "value": "Earth"
+    },
+    {
+      "id": 48,
+      "name": "Astro House",
+      "value": "2nd House"
+    },
+    {
+      "id": 49,
+      "name": "Custom Key",
+      "value": "Mirror or Honey Jar"
+    }
   ],
   "house_role": {
     "name": "Musa",
@@ -67,9 +263,19 @@
   "ritual_practice": {
     "dress": "Gold, yellow, radiant clothing",
     "lenses": "Yellow-tinted or golden",
-    "objects": ["Honey jar", "mirror", "copper jewelry", "flowers"],
+    "objects": [
+      "Honey jar",
+      "mirror",
+      "copper jewelry",
+      "flowers"
+    ],
     "sound_activation": "Bowl or bell tuned to 528 Hz",
-    "food": ["Mango", "banana", "honey", "hibiscus nectar"],
+    "food": [
+      "Mango",
+      "banana",
+      "honey",
+      "hibiscus nectar"
+    ],
     "movement": "Mirror dance, sensual stretching, spa bathing",
     "mantra": "I radiate beauty, love, and abundance.",
     "crypto": "Beauty NFTs, lifestyle protocols",

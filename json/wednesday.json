@@ -2,60 +2,256 @@
   "day": "Wednesday",
   "yoruba_name": "Ọjọ́ Rírú",
   "archetype": "Yemọja",
-  "principle": "Cause and Effect",
+  "principle": "Correspondence",
   "tone": "Fa (F)",
   "frequency": "639 Hz",
   "color": "Blue and White",
   "facets": [
-    { "id": 1, "name": "Day of the Week", "value": "Wednesday" },
-    { "id": 2, "name": "Planetary Ruler", "value": "Mercury (communication, memory, wisdom)" },
-    { "id": 3, "name": "Chakra", "value": "Heart Chakra (unconditional love, nurturing energy)" },
-    { "id": 4, "name": "Tone (Music)", "value": "Fa (F) – 639 Hz" },
-    { "id": 5, "name": "Hermetic Principle", "value": "Cause and Effect – “Every cause has an effect”" },
-    { "id": 6, "name": "Element", "value": "Water (wisdom, healing, comfort)" },
-    { "id": 7, "name": "Òrìṣà", "value": "Yemọja" },
-    { "id": 8, "name": "Òrìṣà Color", "value": "Blue and White" },
-    { "id": 9, "name": "Endocrine Gland", "value": "Thymus (immunity, protection, emotional strength)" },
-    { "id": 10, "name": "Direction", "value": "West" },
-    { "id": 11, "name": "Deadly Sin to Master", "value": "Envy (comparison, emotional imbalance)" },
-    { "id": 12, "name": "Virtue to Embody", "value": "Compassion and Emotional Maturity" },
-    { "id": 13, "name": "Crypto Sector", "value": "Healthcare / Soulbound Tokens / Decentralized ID" },
-    { "id": 14, "name": "Clair Ability", "value": "Clairaudience (hearing messages, water frequencies)" },
-    { "id": 15, "name": "Ray of Light", "value": "3rd Ray – Active Intelligence (Aqua Blue)" },
-    { "id": 16, "name": "Continent", "value": "Africa (origin waters, ancestral roots)" },
-    { "id": 17, "name": "Veil", "value": "Veil of Reflection" },
-    { "id": 18, "name": "Inanna Gate", "value": "Gate of Emotional Depth" },
-    { "id": 19, "name": "Mirror", "value": "The Mother’s Heart" },
-    { "id": 20, "name": "Wealth Type", "value": "Ancestral Wealth / Emotional Security" },
-    { "id": 21, "name": "Heaven Level", "value": "Fourth Heaven – Realms of Comfort and Service" },
-    { "id": 22, "name": "Law of Ma’at", "value": "Nurturing Harmony" },
-    { "id": 23, "name": "Jacob’s Ladder Rung", "value": "Tiferet – Compassion and Truth" },
-    { "id": 24, "name": "Energy Body", "value": "Heart Field / Electromagnetic Aura" },
-    { "id": 25, "name": "Rose Petal", "value": "Fourth Petal – Overflowing Love" },
-    { "id": 26, "name": "Spirit of God", "value": "Spirit of Counsel" },
-    { "id": 27, "name": "Business Archetype", "value": "The Nurturer / House Mother / Guide" },
-    { "id": 28, "name": "Seal of Revelation", "value": "Fourth Seal – Compassion in Chaos" },
-    { "id": 29, "name": "Trumpet", "value": "Trumpet of Mother’s Call" },
-    { "id": 30, "name": "Bowl", "value": "Bowl of Saltwater or Sea Shells" },
-    { "id": 31, "name": "Spiritual Discipline", "value": "Ocean bathing, emotional journaling, candle by water" },
-    { "id": 32, "name": "Metal (Alchemy)", "value": "Tin (flow and emotional circuitry)" },
-    { "id": 33, "name": "Alchemy Stage", "value": "Conjunction (merging heart and mind)" },
-    { "id": 34, "name": "Church of Revelation", "value": "Thyatira – Love and Service" },
-    { "id": 35, "name": "Wonder of the World", "value": "Lighthouse of Alexandria (guidance across waters)" },
-    { "id": 36, "name": "Psychological Shadow", "value": "Emotional repression, bitterness" },
-    { "id": 37, "name": "Tech Temptation", "value": "Overconnection / toxic empathy / emotional dependency" },
-    { "id": 38, "name": "Business Department", "value": "Human Resources / Wellness / Counseling" },
-    { "id": 39, "name": "Consciousness Level", "value": "Emotional Mastery" },
-    { "id": 40, "name": "Astrological Ruler", "value": "Mercury (flow and wisdom when paired with water)" },
-    { "id": 41, "name": "Body Part", "value": "Chest, breasts (nurture), immune system" },
-    { "id": 42, "name": "Color (Traditional Chakra)", "value": "Green (blended with blue here)" },
-    { "id": 43, "name": "Animal Totem", "value": "Whale or Dolphin (deep wisdom, emotional resonance)" },
-    { "id": 44, "name": "Season", "value": "Rainy Season / Monsoon / Mid-Summer" },
-    { "id": 45, "name": "Moon Phase", "value": "Full Moon (emotional culmination)" },
-    { "id": 46, "name": "Astrological Modality", "value": "Mutable" },
-    { "id": 47, "name": "Astrological Element", "value": "Water" },
-    { "id": 48, "name": "Astrological House", "value": "4th House (home, roots, motherhood)" },
-    { "id": 49, "name": "Custom Key", "value": "Shell or silver heart charm" }
+    {
+      "id": 1,
+      "name": "Day of the Week",
+      "value": "Wednesday"
+    },
+    {
+      "id": 2,
+      "name": "Planetary Ruler",
+      "value": "Mercury (communication, memory, wisdom)"
+    },
+    {
+      "id": 3,
+      "name": "Chakra",
+      "value": "Heart Chakra (unconditional love, nurturing energy)"
+    },
+    {
+      "id": 4,
+      "name": "Tone (Music)",
+      "value": "Fa (F) – 639 Hz"
+    },
+    {
+      "id": 5,
+      "name": "Hermetic Principle",
+      "value": "Correspondence"
+    },
+    {
+      "id": 6,
+      "name": "Element",
+      "value": "Water (wisdom, healing, comfort)"
+    },
+    {
+      "id": 7,
+      "name": "Òrìṣà",
+      "value": "Yemọja"
+    },
+    {
+      "id": 8,
+      "name": "Òrìṣà Color",
+      "value": "Blue and White"
+    },
+    {
+      "id": 9,
+      "name": "Endocrine Gland",
+      "value": "Thymus (immunity, protection, emotional strength)"
+    },
+    {
+      "id": 10,
+      "name": "Direction",
+      "value": "West"
+    },
+    {
+      "id": 11,
+      "name": "Deadly Sin to Master",
+      "value": "Envy (comparison, emotional imbalance)"
+    },
+    {
+      "id": 12,
+      "name": "Virtue to Embody",
+      "value": "Compassion and Emotional Maturity"
+    },
+    {
+      "id": 13,
+      "name": "Crypto Sector",
+      "value": "Healthcare / Soulbound Tokens / Decentralized ID"
+    },
+    {
+      "id": 14,
+      "name": "Clair Ability",
+      "value": "Clairaudience (hearing messages, water frequencies)"
+    },
+    {
+      "id": 15,
+      "name": "Ray of Light",
+      "value": "3rd Ray – Active Intelligence (Aqua Blue)"
+    },
+    {
+      "id": 16,
+      "name": "Continent",
+      "value": "Africa (origin waters, ancestral roots)"
+    },
+    {
+      "id": 17,
+      "name": "Veil",
+      "value": "Veil of Reflection"
+    },
+    {
+      "id": 18,
+      "name": "Inanna Gate",
+      "value": "Gate of Emotional Depth"
+    },
+    {
+      "id": 19,
+      "name": "Mirror",
+      "value": "The Mother’s Heart"
+    },
+    {
+      "id": 20,
+      "name": "Wealth Type",
+      "value": "Ancestral Wealth / Emotional Security"
+    },
+    {
+      "id": 21,
+      "name": "Heaven Level",
+      "value": "Fourth Heaven – Realms of Comfort and Service"
+    },
+    {
+      "id": 22,
+      "name": "Law of Ma’at",
+      "value": "Nurturing Harmony"
+    },
+    {
+      "id": 23,
+      "name": "Jacob’s Ladder Rung",
+      "value": "Tiferet – Compassion and Truth"
+    },
+    {
+      "id": 24,
+      "name": "Energy Body",
+      "value": "Heart Field / Electromagnetic Aura"
+    },
+    {
+      "id": 25,
+      "name": "Rose Petal",
+      "value": "Fourth Petal – Overflowing Love"
+    },
+    {
+      "id": 26,
+      "name": "Spirit of God",
+      "value": "Spirit of Counsel"
+    },
+    {
+      "id": 27,
+      "name": "Business Archetype",
+      "value": "The Nurturer / House Mother / Guide"
+    },
+    {
+      "id": 28,
+      "name": "Seal of Revelation",
+      "value": "Fourth Seal – Compassion in Chaos"
+    },
+    {
+      "id": 29,
+      "name": "Trumpet",
+      "value": "Trumpet of Mother’s Call"
+    },
+    {
+      "id": 30,
+      "name": "Bowl",
+      "value": "Bowl of Saltwater or Sea Shells"
+    },
+    {
+      "id": 31,
+      "name": "Spiritual Discipline",
+      "value": "Ocean bathing, emotional journaling, candle by water"
+    },
+    {
+      "id": 32,
+      "name": "Metal (Alchemy)",
+      "value": "Tin (flow and emotional circuitry)"
+    },
+    {
+      "id": 33,
+      "name": "Alchemy Stage",
+      "value": "Conjunction (merging heart and mind)"
+    },
+    {
+      "id": 34,
+      "name": "Church of Revelation",
+      "value": "Thyatira – Love and Service"
+    },
+    {
+      "id": 35,
+      "name": "Wonder of the World",
+      "value": "Lighthouse of Alexandria (guidance across waters)"
+    },
+    {
+      "id": 36,
+      "name": "Psychological Shadow",
+      "value": "Emotional repression, bitterness"
+    },
+    {
+      "id": 37,
+      "name": "Tech Temptation",
+      "value": "Overconnection / toxic empathy / emotional dependency"
+    },
+    {
+      "id": 38,
+      "name": "Business Department",
+      "value": "Human Resources / Wellness / Counseling"
+    },
+    {
+      "id": 39,
+      "name": "Consciousness Level",
+      "value": "Emotional Mastery"
+    },
+    {
+      "id": 40,
+      "name": "Astrological Ruler",
+      "value": "Mercury (flow and wisdom when paired with water)"
+    },
+    {
+      "id": 41,
+      "name": "Body Part",
+      "value": "Chest, breasts (nurture), immune system"
+    },
+    {
+      "id": 42,
+      "name": "Color (Traditional Chakra)",
+      "value": "Green (blended with blue here)"
+    },
+    {
+      "id": 43,
+      "name": "Animal Totem",
+      "value": "Whale or Dolphin (deep wisdom, emotional resonance)"
+    },
+    {
+      "id": 44,
+      "name": "Season",
+      "value": "Rainy Season / Monsoon / Mid-Summer"
+    },
+    {
+      "id": 45,
+      "name": "Moon Phase",
+      "value": "Full Moon (emotional culmination)"
+    },
+    {
+      "id": 46,
+      "name": "Astrological Modality",
+      "value": "Mutable"
+    },
+    {
+      "id": 47,
+      "name": "Astrological Element",
+      "value": "Water"
+    },
+    {
+      "id": 48,
+      "name": "Astrological House",
+      "value": "4th House (home, roots, motherhood)"
+    },
+    {
+      "id": 49,
+      "name": "Custom Key",
+      "value": "Shell or silver heart charm"
+    }
   ],
   "house_role": {
     "name": "Mariposa",
@@ -67,9 +263,18 @@
   "ritual_practice": {
     "dress": "Blue or white, soft or flowing fabrics",
     "glasses": "Blue lenses or aquamarine accents",
-    "ritual_objects": ["Bowl of water with sea salt", "white candle", "sea shell"],
+    "ritual_objects": [
+      "Bowl of water with sea salt",
+      "white candle",
+      "sea shell"
+    ],
     "tone_activation": "Bell or bowl tuned to F (639 Hz)",
-    "food": ["Coconut", "seaweed", "water-rich fruits", "fish"],
+    "food": [
+      "Coconut",
+      "seaweed",
+      "water-rich fruits",
+      "fish"
+    ],
     "movement": "Gentle flowing dance, yin yoga, oceanic visualization",
     "mantra": "I am the calm ocean. I hold and heal.",
     "crypto_focus": "Projects related to wellness, ID protection, soul-bound verification",

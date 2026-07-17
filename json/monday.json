@@ -2,60 +2,256 @@
   "day": "Monday",
   "yoruba_name": "Ọjọ́ Ajé",
   "archetype": "Ṣàngó",
-  "principle": "Polarity",
+  "principle": "Cause and Effect",
   "tone": "Re (D)",
   "frequency": "288 Hz",
   "color": "Red and White",
   "facets": [
-    { "id": 1, "name": "Day", "value": "Ọjọ́ Ajé (Monday)" },
-    { "id": 2, "name": "Planetary Ruler", "value": "Mars" },
-    { "id": 3, "name": "Chakra", "value": "Sacral × Solar" },
-    { "id": 4, "name": "Tone / Frequency", "value": "Re (D) · 288 Hz" },
-    { "id": 5, "name": "Hermetic Principle", "value": "Polarity" },
-    { "id": 6, "name": "Element", "value": "Fire (Iná)" },
-    { "id": 7, "name": "Òrìṣà", "value": "Ṣàngó" },
-    { "id": 8, "name": "Colors", "value": "Red + White" },
-    { "id": 9, "name": "Gland", "value": "Gonads" },
-    { "id": 10, "name": "Direction", "value": "Southeast" },
-    { "id": 11, "name": "Sin to Transform", "value": "Pride → Courageous Humility" },
-    { "id": 12, "name": "Virtue", "value": "Strength with Compassion" },
-    { "id": 13, "name": "Crypto Sector", "value": "DeFi / Power Protocols" },
-    { "id": 14, "name": "Clair Sense", "value": "Clairsentience" },
-    { "id": 15, "name": "Ray of Light", "value": "6th Ray – Devotion & Idealism" },
-    { "id": 16, "name": "Continent", "value": "North America" },
-    { "id": 17, "name": "Veil", "value": "Veil of Will" },
-    { "id": 18, "name": "Inanna Gate", "value": "Gate of Passion and Courage" },
-    { "id": 19, "name": "Mirror", "value": "Warrior’s Flame" },
-    { "id": 20, "name": "Wealth Type", "value": "Empire Wealth" },
-    { "id": 21, "name": "Heaven Level", "value": "2nd – Domain of Might" },
-    { "id": 22, "name": "Law of Ma’at", "value": "Divine Justice" },
-    { "id": 23, "name": "Jacob’s Ladder", "value": "Hod (Discipline & Glory)" },
-    { "id": 24, "name": "Energy Body", "value": "Emotional Field" },
-    { "id": 25, "name": "Rose Petal", "value": "Fire of Creation" },
-    { "id": 26, "name": "Spirit of God", "value": "Spirit of Divine Judgment" },
-    { "id": 27, "name": "Business Archetype", "value": "Executive / Ruler" },
-    { "id": 28, "name": "Seal", "value": "Second Seal – War & Conflict" },
-    { "id": 29, "name": "Trumpet", "value": "Trumpet of Judgment" },
-    { "id": 30, "name": "Bowl", "value": "Bowl of Flames" },
-    { "id": 31, "name": "Spiritual Practice", "value": "Fire offerings, candle rituals, truth invocation" },
-    { "id": 32, "name": "Metal", "value": "Iron" },
-    { "id": 33, "name": "Alchemy Stage", "value": "Dissolution" },
-    { "id": 34, "name": "Revelation Church", "value": "Smyrna" },
-    { "id": 35, "name": "Wonder", "value": "Colossus of Rhodes" },
-    { "id": 36, "name": "Shadow Work", "value": "Arrogance → Disciplined Strength" },
-    { "id": 37, "name": "Tech Temptation", "value": "Power Hoarding" },
-    { "id": 38, "name": "Biz Dept", "value": "Executive Command" },
-    { "id": 39, "name": "Consciousness Level", "value": "Controlled Power" },
-    { "id": 40, "name": "Astro Ruler", "value": "Mars" },
-    { "id": 41, "name": "Body Part", "value": "Hips / Sexual Fire" },
-    { "id": 42, "name": "Chakra Color", "value": "Òsán (Orange)" },
-    { "id": 43, "name": "Animal Totem", "value": "Lion" },
-    { "id": 44, "name": "Season", "value": "Summer" },
-    { "id": 45, "name": "Moon Phase", "value": "First Quarter" },
-    { "id": 46, "name": "Modality", "value": "Fixed" },
-    { "id": 47, "name": "Element", "value": "Fire" },
-    { "id": 48, "name": "House", "value": "10th (Leadership, Destiny)" },
-    { "id": 49, "name": "Ritual Key Symbol", "value": "Double Axe / ⚡" }
+    {
+      "id": 1,
+      "name": "Day",
+      "value": "Ọjọ́ Ajé (Monday)"
+    },
+    {
+      "id": 2,
+      "name": "Planetary Ruler",
+      "value": "Mars"
+    },
+    {
+      "id": 3,
+      "name": "Chakra",
+      "value": "Sacral × Solar"
+    },
+    {
+      "id": 4,
+      "name": "Tone / Frequency",
+      "value": "Re (D) · 288 Hz"
+    },
+    {
+      "id": 5,
+      "name": "Hermetic Principle",
+      "value": "Cause and Effect"
+    },
+    {
+      "id": 6,
+      "name": "Element",
+      "value": "Fire (Iná)"
+    },
+    {
+      "id": 7,
+      "name": "Òrìṣà",
+      "value": "Ṣàngó"
+    },
+    {
+      "id": 8,
+      "name": "Colors",
+      "value": "Red + White"
+    },
+    {
+      "id": 9,
+      "name": "Gland",
+      "value": "Gonads"
+    },
+    {
+      "id": 10,
+      "name": "Direction",
+      "value": "Southeast"
+    },
+    {
+      "id": 11,
+      "name": "Sin to Transform",
+      "value": "Pride → Courageous Humility"
+    },
+    {
+      "id": 12,
+      "name": "Virtue",
+      "value": "Strength with Compassion"
+    },
+    {
+      "id": 13,
+      "name": "Crypto Sector",
+      "value": "DeFi / Power Protocols"
+    },
+    {
+      "id": 14,
+      "name": "Clair Sense",
+      "value": "Clairsentience"
+    },
+    {
+      "id": 15,
+      "name": "Ray of Light",
+      "value": "6th Ray – Devotion & Idealism"
+    },
+    {
+      "id": 16,
+      "name": "Continent",
+      "value": "North America"
+    },
+    {
+      "id": 17,
+      "name": "Veil",
+      "value": "Veil of Will"
+    },
+    {
+      "id": 18,
+      "name": "Inanna Gate",
+      "value": "Gate of Passion and Courage"
+    },
+    {
+      "id": 19,
+      "name": "Mirror",
+      "value": "Warrior’s Flame"
+    },
+    {
+      "id": 20,
+      "name": "Wealth Type",
+      "value": "Empire Wealth"
+    },
+    {
+      "id": 21,
+      "name": "Heaven Level",
+      "value": "2nd – Domain of Might"
+    },
+    {
+      "id": 22,
+      "name": "Law of Ma’at",
+      "value": "Divine Justice"
+    },
+    {
+      "id": 23,
+      "name": "Jacob’s Ladder",
+      "value": "Hod (Discipline & Glory)"
+    },
+    {
+      "id": 24,
+      "name": "Energy Body",
+      "value": "Emotional Field"
+    },
+    {
+      "id": 25,
+      "name": "Rose Petal",
+      "value": "Fire of Creation"
+    },
+    {
+      "id": 26,
+      "name": "Spirit of God",
+      "value": "Spirit of Divine Judgment"
+    },
+    {
+      "id": 27,
+      "name": "Business Archetype",
+      "value": "Executive / Ruler"
+    },
+    {
+      "id": 28,
+      "name": "Seal",
+      "value": "Second Seal – War & Conflict"
+    },
+    {
+      "id": 29,
+      "name": "Trumpet",
+      "value": "Trumpet of Judgment"
+    },
+    {
+      "id": 30,
+      "name": "Bowl",
+      "value": "Bowl of Flames"
+    },
+    {
+      "id": 31,
+      "name": "Spiritual Practice",
+      "value": "Fire offerings, candle rituals, truth invocation"
+    },
+    {
+      "id": 32,
+      "name": "Metal",
+      "value": "Iron"
+    },
+    {
+      "id": 33,
+      "name": "Alchemy Stage",
+      "value": "Dissolution"
+    },
+    {
+      "id": 34,
+      "name": "Revelation Church",
+      "value": "Smyrna"
+    },
+    {
+      "id": 35,
+      "name": "Wonder",
+      "value": "Colossus of Rhodes"
+    },
+    {
+      "id": 36,
+      "name": "Shadow Work",
+      "value": "Arrogance → Disciplined Strength"
+    },
+    {
+      "id": 37,
+      "name": "Tech Temptation",
+      "value": "Power Hoarding"
+    },
+    {
+      "id": 38,
+      "name": "Biz Dept",
+      "value": "Executive Command"
+    },
+    {
+      "id": 39,
+      "name": "Consciousness Level",
+      "value": "Controlled Power"
+    },
+    {
+      "id": 40,
+      "name": "Astro Ruler",
+      "value": "Mars"
+    },
+    {
+      "id": 41,
+      "name": "Body Part",
+      "value": "Hips / Sexual Fire"
+    },
+    {
+      "id": 42,
+      "name": "Chakra Color",
+      "value": "Òsán (Orange)"
+    },
+    {
+      "id": 43,
+      "name": "Animal Totem",
+      "value": "Lion"
+    },
+    {
+      "id": 44,
+      "name": "Season",
+      "value": "Summer"
+    },
+    {
+      "id": 45,
+      "name": "Moon Phase",
+      "value": "First Quarter"
+    },
+    {
+      "id": 46,
+      "name": "Modality",
+      "value": "Fixed"
+    },
+    {
+      "id": 47,
+      "name": "Element",
+      "value": "Fire"
+    },
+    {
+      "id": 48,
+      "name": "House",
+      "value": "10th (Leadership, Destiny)"
+    },
+    {
+      "id": 49,
+      "name": "Ritual Key Symbol",
+      "value": "Double Axe / ⚡"
+    }
   ],
   "house_role": {
     "name": "Reina",
@@ -67,9 +263,17 @@
   "ritual_practice": {
     "dress_code": "Red and White clothing",
     "lenses": "Red-orange ritual lenses or filtered light",
-    "objects": ["Double axe", "thunder drums", "red candles"],
+    "objects": [
+      "Double axe",
+      "thunder drums",
+      "red candles"
+    ],
     "sound_activation": "Bell or drum tuned to 288 Hz",
-    "food_offerings": ["Ginger", "spicy foods", "hibiscus"],
+    "food_offerings": [
+      "Ginger",
+      "spicy foods",
+      "hibiscus"
+    ],
     "movement": "Fire dancing, warrior poses, power breath",
     "mantra": "I move with divine strength and execute justice with fire.",
     "crypto_focus": "Layer 2s · Governance · DeFi",

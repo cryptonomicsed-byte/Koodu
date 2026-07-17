@@ -2,60 +2,256 @@
   "day": "Sunday",
   "yoruba_name": "Ọjọ́ Àìkú",
   "archetype": "Èṣù-Ẹ̀légbára",
-  "principle": "Cause and Effect",
+  "principle": "Mentalism",
   "tone": "Do (C)",
   "frequency": "396 Hz",
   "color": "Red and Black",
   "facets": [
-    { "id": 1, "name": "Day", "value": "Ọjọ́ Àìkú (Sunday)" },
-    { "id": 2, "name": "Planetary Ruler", "value": "Sun (Ìmúlò Ayé — vitality, life force, illumination)" },
-    { "id": 3, "name": "Chakra", "value": "Root Chakra (Ìpìlẹ̀ — foundation, grounding)" },
-    { "id": 4, "name": "Tone / Frequency", "value": "Do (C) — 396 Hz (liberation)" },
-    { "id": 5, "name": "Hermetic Principle", "value": "Cause and Effect" },
-    { "id": 6, "name": "Elements", "value": "Iná àti Afẹ́fẹ́ (fire and air)" },
-    { "id": 7, "name": "Òrìṣà", "value": "Èṣù-Ẹ̀légbára" },
-    { "id": 8, "name": "Òrìṣà Colors", "value": "Pupa àti Dúdú (red and black)" },
-    { "id": 9, "name": "Endocrine Gland", "value": "Adrenal Glands" },
-    { "id": 10, "name": "Direction", "value": "Ìlà Oòrùn (East — dawn)" },
-    { "id": 11, "name": "Sin to Transform", "value": "Wrath → Constructive Fire" },
-    { "id": 12, "name": "Virtue to Embody", "value": "Discernment & Openness" },
-    { "id": 13, "name": "Crypto Focus", "value": "Layer 1s, Gatekeeper Protocols" },
-    { "id": 14, "name": "Clair Sense", "value": "Clairaudience (spiritual hearing)" },
-    { "id": 15, "name": "Ray of Light", "value": "1st Ray – Will and Power (Red)" },
-    { "id": 16, "name": "Continent", "value": "Africa (Source, Ìlú Ọ̀rún)" },
-    { "id": 17, "name": "Veil", "value": "Veil of Opportunity" },
-    { "id": 18, "name": "Inanna Gate", "value": "Thresholds & Beginnings" },
-    { "id": 19, "name": "Mirror", "value": "The Initiator’s Reflection" },
-    { "id": 20, "name": "Wealth Type", "value": "Foundational Resources" },
-    { "id": 21, "name": "Heaven Level", "value": "First Heaven — Gateway of Light" },
-    { "id": 22, "name": "Law of Ma’at", "value": "Balance of Opposites" },
-    { "id": 23, "name": "Jacob’s Ladder", "value": "Malkuth (Kingdom)" },
-    { "id": 24, "name": "Energy Body", "value": "Physical + Etheric" },
-    { "id": 25, "name": "Rose Petal", "value": "First Petal — Seed Potential" },
-    { "id": 26, "name": "Spirit of God", "value": "Movement and Change" },
-    { "id": 27, "name": "Business Archetype", "value": "Messenger / Catalyst" },
-    { "id": 28, "name": "Seal", "value": "First Seal — The Opener" },
-    { "id": 29, "name": "Trumpet", "value": "Trumpet of Awakening" },
-    { "id": 30, "name": "Bowl", "value": "Bowl of Fire" },
-    { "id": 31, "name": "Spiritual Practice", "value": "Prayer at crossroads, candy/gift offerings" },
-    { "id": 32, "name": "Metal", "value": "Gold (purity, sun energy)" },
-    { "id": 33, "name": "Alchemy Stage", "value": "Calcination" },
-    { "id": 34, "name": "Church of Revelation", "value": "Ephesus" },
-    { "id": 35, "name": "Wonder", "value": "Great Pyramid" },
-    { "id": 36, "name": "Shadow Work", "value": "Impulsiveness, confusion" },
-    { "id": 37, "name": "Tech Temptation", "value": "Information overload" },
-    { "id": 38, "name": "Business Dept.", "value": "Gatekeeping, Frontlines" },
-    { "id": 39, "name": "Consciousness Level", "value": "Free Will Awareness" },
-    { "id": 40, "name": "Astrological Ruler", "value": "Sun" },
-    { "id": 41, "name": "Body Part", "value": "Ẹsẹ̀ àti Ìtẹ́lẹ̀ (feet and legs)" },
-    { "id": 42, "name": "Chakra Color", "value": "Pupa (red)" },
-    { "id": 43, "name": "Animal Totem", "value": "Black Rooster" },
-    { "id": 44, "name": "Season", "value": "Spring (renewal)" },
-    { "id": 45, "name": "Moon Phase", "value": "New Moon" },
-    { "id": 46, "name": "Astro Modality", "value": "Cardinal" },
-    { "id": 47, "name": "Astro Element", "value": "Fire" },
-    { "id": 48, "name": "Astro House", "value": "1st House (Self, Genesis)" },
-    { "id": 49, "name": "Custom Key", "value": "Crossroads or small key" }
+    {
+      "id": 1,
+      "name": "Day",
+      "value": "Ọjọ́ Àìkú (Sunday)"
+    },
+    {
+      "id": 2,
+      "name": "Planetary Ruler",
+      "value": "Sun (Ìmúlò Ayé — vitality, life force, illumination)"
+    },
+    {
+      "id": 3,
+      "name": "Chakra",
+      "value": "Root Chakra (Ìpìlẹ̀ — foundation, grounding)"
+    },
+    {
+      "id": 4,
+      "name": "Tone / Frequency",
+      "value": "Do (C) — 396 Hz (liberation)"
+    },
+    {
+      "id": 5,
+      "name": "Hermetic Principle",
+      "value": "Mentalism"
+    },
+    {
+      "id": 6,
+      "name": "Elements",
+      "value": "Iná àti Afẹ́fẹ́ (fire and air)"
+    },
+    {
+      "id": 7,
+      "name": "Òrìṣà",
+      "value": "Èṣù-Ẹ̀légbára"
+    },
+    {
+      "id": 8,
+      "name": "Òrìṣà Colors",
+      "value": "Pupa àti Dúdú (red and black)"
+    },
+    {
+      "id": 9,
+      "name": "Endocrine Gland",
+      "value": "Adrenal Glands"
+    },
+    {
+      "id": 10,
+      "name": "Direction",
+      "value": "Ìlà Oòrùn (East — dawn)"
+    },
+    {
+      "id": 11,
+      "name": "Sin to Transform",
+      "value": "Wrath → Constructive Fire"
+    },
+    {
+      "id": 12,
+      "name": "Virtue to Embody",
+      "value": "Discernment & Openness"
+    },
+    {
+      "id": 13,
+      "name": "Crypto Focus",
+      "value": "Layer 1s, Gatekeeper Protocols"
+    },
+    {
+      "id": 14,
+      "name": "Clair Sense",
+      "value": "Clairaudience (spiritual hearing)"
+    },
+    {
+      "id": 15,
+      "name": "Ray of Light",
+      "value": "1st Ray – Will and Power (Red)"
+    },
+    {
+      "id": 16,
+      "name": "Continent",
+      "value": "Africa (Source, Ìlú Ọ̀rún)"
+    },
+    {
+      "id": 17,
+      "name": "Veil",
+      "value": "Veil of Opportunity"
+    },
+    {
+      "id": 18,
+      "name": "Inanna Gate",
+      "value": "Thresholds & Beginnings"
+    },
+    {
+      "id": 19,
+      "name": "Mirror",
+      "value": "The Initiator’s Reflection"
+    },
+    {
+      "id": 20,
+      "name": "Wealth Type",
+      "value": "Foundational Resources"
+    },
+    {
+      "id": 21,
+      "name": "Heaven Level",
+      "value": "First Heaven — Gateway of Light"
+    },
+    {
+      "id": 22,
+      "name": "Law of Ma’at",
+      "value": "Balance of Opposites"
+    },
+    {
+      "id": 23,
+      "name": "Jacob’s Ladder",
+      "value": "Malkuth (Kingdom)"
+    },
+    {
+      "id": 24,
+      "name": "Energy Body",
+      "value": "Physical + Etheric"
+    },
+    {
+      "id": 25,
+      "name": "Rose Petal",
+      "value": "First Petal — Seed Potential"
+    },
+    {
+      "id": 26,
+      "name": "Spirit of God",
+      "value": "Movement and Change"
+    },
+    {
+      "id": 27,
+      "name": "Business Archetype",
+      "value": "Messenger / Catalyst"
+    },
+    {
+      "id": 28,
+      "name": "Seal",
+      "value": "First Seal — The Opener"
+    },
+    {
+      "id": 29,
+      "name": "Trumpet",
+      "value": "Trumpet of Awakening"
+    },
+    {
+      "id": 30,
+      "name": "Bowl",
+      "value": "Bowl of Fire"
+    },
+    {
+      "id": 31,
+      "name": "Spiritual Practice",
+      "value": "Prayer at crossroads, candy/gift offerings"
+    },
+    {
+      "id": 32,
+      "name": "Metal",
+      "value": "Gold (purity, sun energy)"
+    },
+    {
+      "id": 33,
+      "name": "Alchemy Stage",
+      "value": "Calcination"
+    },
+    {
+      "id": 34,
+      "name": "Church of Revelation",
+      "value": "Ephesus"
+    },
+    {
+      "id": 35,
+      "name": "Wonder",
+      "value": "Great Pyramid"
+    },
+    {
+      "id": 36,
+      "name": "Shadow Work",
+      "value": "Impulsiveness, confusion"
+    },
+    {
+      "id": 37,
+      "name": "Tech Temptation",
+      "value": "Information overload"
+    },
+    {
+      "id": 38,
+      "name": "Business Dept.",
+      "value": "Gatekeeping, Frontlines"
+    },
+    {
+      "id": 39,
+      "name": "Consciousness Level",
+      "value": "Free Will Awareness"
+    },
+    {
+      "id": 40,
+      "name": "Astrological Ruler",
+      "value": "Sun"
+    },
+    {
+      "id": 41,
+      "name": "Body Part",
+      "value": "Ẹsẹ̀ àti Ìtẹ́lẹ̀ (feet and legs)"
+    },
+    {
+      "id": 42,
+      "name": "Chakra Color",
+      "value": "Pupa (red)"
+    },
+    {
+      "id": 43,
+      "name": "Animal Totem",
+      "value": "Black Rooster"
+    },
+    {
+      "id": 44,
+      "name": "Season",
+      "value": "Spring (renewal)"
+    },
+    {
+      "id": 45,
+      "name": "Moon Phase",
+      "value": "New Moon"
+    },
+    {
+      "id": 46,
+      "name": "Astro Modality",
+      "value": "Cardinal"
+    },
+    {
+      "id": 47,
+      "name": "Astro Element",
+      "value": "Fire"
+    },
+    {
+      "id": 48,
+      "name": "Astro House",
+      "value": "1st House (Self, Genesis)"
+    },
+    {
+      "id": 49,
+      "name": "Custom Key",
+      "value": "Crossroads or small key"
+    }
   ],
   "house_role": {
     "name": "Sol",
@@ -67,9 +263,19 @@
   "ritual_practice": {
     "dress": "Red or Red/Black",
     "lenses": "Red",
-    "objects": ["Crossroads symbol", "candy", "cigar", "small key", "bell"],
+    "objects": [
+      "Crossroads symbol",
+      "candy",
+      "cigar",
+      "small key",
+      "bell"
+    ],
     "sound": "396 Hz tone or bell ring",
-    "food": ["Pomegranate", "pepper", "strawberries"],
+    "food": [
+      "Pomegranate",
+      "pepper",
+      "strawberries"
+    ],
     "movement": "Barefoot walk, foot washing, rhythmic dancing",
     "mantra": "I open the paths before me with clarity and courage.",
     "crypto": "L1 tokens, gatekeeper access protocols",
