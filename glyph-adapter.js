@@ -8,12 +8,25 @@
 // permission grant, verifies inbound anchors keylessly, and merges
 // accepted snapshots under the shared A2A rules.
 //
+// Companion capability-card layer: where the snapshot functions above
+// exchange a whole filtered graph between mesh peers, `buildCapabilityCard`/
+// `verifyCapabilityCard`/`GlyphMeshAdapter` publish and validate *signed,
+// scoped* offers -- a neighbor can query one permitted slice of an agent's
+// sealed glyph vault without a full snapshot exchange. Cards carry glyph
+// metadata + Walrus blob ids only; the requester decrypts what its grant
+// covers with keys received out-of-band from the owner. Both layers share
+// the same GIX-FOLD-v1 primitives below.
+//
 // Run the conformance self-test:  node glyph-adapter.js
 
 import crypto from 'crypto';
+import https from 'https';
+import http from 'http';
 
 export const GIX1_EMPTY_ROOT =
   '58cc47f0d238cea8bb764f7a927a54b398c8baf5de0a2332c03008038c3fd9a8';
+
+// ── GIX-FOLD-v1 (identical constants in every ecosystem repo) ───────────────
 
 const FOLD_RANGES = [
   [0x0020, 0xd7ff - 0x0020 + 1],
@@ -33,6 +46,7 @@ export function canonicalId(digest) {
 }
 
 export function glyphFold(digest) {
+  if (digest.length !== 32) throw new Error('glyphFold requires a 32-byte digest');
   let rem = 0n;
   for (const byte of digest) rem = ((rem << 8n) | BigInt(byte)) % BigInt(FOLD_TOTAL);
   let idx = Number(rem);
@@ -156,6 +170,132 @@ export function groupByOduBase(wire) {
   return groups;
 }
 
+// ── memory capability cards ─────────────────────────────────────────────────
+
+/**
+ * Build a shareable capability card for a slice of the vault. `glyphs` is an
+ * array of metadata entries ({ canonical_id, glyph, odu_composed, ts,
+ * walrus_blob_id }); `grant` names the neighbor and scope. The card is
+ * HMAC-signed with the owner's GIX mac key so Vantage/Zangbeto can verify it
+ * wasn't reshaped in transit.
+ */
+export function buildCapabilityCard({ ownerWallet, agentId, glyphs, grant, macKey }) {
+  const card = {
+    kind: 'glyph_capability_card',
+    version: 1,
+    owner: ownerWallet,
+    agent_id: agentId,
+    grant: {
+      neighbor_id: grant.neighborId,
+      block_id: grant.blockId || 'default',
+      scope: grant.scope || 'read',
+      expires_at: grant.expiresAt || null,
+    },
+    glyphs: glyphs.map((g) => ({
+      canonical_id: g.canonical_id,
+      glyph: g.glyph,
+      odu_composed: g.odu_composed,
+      ts: g.ts,
+      walrus_blob_id: g.walrus_blob_id || '',
+    })),
+    issued_at: Date.now() / 1000,
+  };
+  card.hmac = signCard(card, macKey);
+  return card;
+}
+
+function canonicalCardBytes(card) {
+  const { hmac, ...unsigned } = card;
+  return Buffer.from(JSON.stringify(unsigned, Object.keys(unsigned).sort()), 'utf8');
+}
+
+export function signCard(card, macKey) {
+  return crypto.createHmac('sha256', macKey).update(canonicalCardBytes(card)).digest('hex');
+}
+
+export function verifyCapabilityCard(card, macKey) {
+  if (card.kind !== 'glyph_capability_card' || card.version !== 1) return false;
+  if (card.grant?.expires_at && card.grant.expires_at < Date.now() / 1000) return false;
+  const expected = signCard(card, macKey);
+  const a = Buffer.from(expected, 'hex');
+  const b = Buffer.from(card.hmac || '', 'hex');
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
+}
+
+/** Every glyph in a card must display as the fold of its canonical id. */
+export function auditCardGlyphs(card) {
+  return (card.glyphs || []).every((g) => {
+    try {
+      return glyphFold(Buffer.from(g.canonical_id, 'hex')) === g.glyph;
+    } catch {
+      return false;
+    }
+  });
+}
+
+// ── mesh transport (Vantage) ────────────────────────────────────────────────
+
+function postJson(baseUrl, path, payload) {
+  return new Promise((resolve, reject) => {
+    const url = new URL(path, baseUrl);
+    const body = JSON.stringify(payload);
+    const mod = url.protocol === 'https:' ? https : http;
+    const req = mod.request(
+      url,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
+        timeout: 10_000,
+      },
+      (res) => {
+        let data = '';
+        res.on('data', (c) => (data += c));
+        res.on('end', () => {
+          if (res.statusCode >= 200 && res.statusCode < 300) resolve(data ? JSON.parse(data) : {});
+          else reject(new Error(`HTTP ${res.statusCode}: ${data.slice(0, 200)}`));
+        });
+      },
+    );
+    req.on('error', reject);
+    req.on('timeout', () => req.destroy(new Error('timeout')));
+    req.write(body);
+    req.end();
+  });
+}
+
+export class GlyphMeshAdapter {
+  constructor({ vantageUrl = process.env.VANTAGE_URL || 'http://localhost:8000' } = {}) {
+    this.vantageUrl = vantageUrl;
+  }
+
+  /** Publish a capability card to the neighborhood memory board. */
+  async publishCard(card) {
+    if (!auditCardGlyphs(card)) throw new Error('card failed glyph-name audit');
+    try {
+      return await postJson(this.vantageUrl, '/api/mesh/memory/cards', card);
+    } catch (err) {
+      console.warn(`[GLYPH] Vantage unreachable — card not published: ${err.message}`);
+      return null;
+    }
+  }
+
+  /** Ask a neighbor's vault (via Vantage) for the sealed blobs a card grants. */
+  async requestSealed(card, canonicalIds) {
+    const granted = new Set(card.glyphs.map((g) => g.canonical_id));
+    const outside = canonicalIds.filter((id) => !granted.has(id));
+    if (outside.length) throw new Error(`request exceeds grant: ${outside[0]}…`);
+    return postJson(this.vantageUrl, '/api/mesh/memory/fetch', {
+      owner: card.owner,
+      agent_id: card.agent_id,
+      canonical_ids: canonicalIds,
+      card_hmac: card.hmac,
+    });
+  }
+}
+
+export const meshAdapter = new GlyphMeshAdapter();
+export default meshAdapter;
+
 // ---- conformance self-test --------------------------------------------------
 
 function buildNode(chunk, ts, tags = [], locator = null) {
@@ -246,6 +386,21 @@ function selfTest() {
   assert(!gix1Audit(blob), 'bad version rejected');
   const groups = groupByOduBase(wire);
   assert([...groups.values()].reduce((n, ids) => n + ids.length, 0) === 3, 'odu grouping covers all nodes');
+
+  // Capability cards: build, sign, verify, audit.
+  const macKey = 'test-mac-key-not-for-production';
+  const card = buildCapabilityCard({
+    ownerWallet: '0xabc123',
+    agentId: 'agent-test',
+    glyphs: [
+      { canonical_id: a.canonical_id, glyph: a.glyph, odu_composed: a.odu_composed, ts: a.ts, walrus_blob_id: a.walrus_blob_id },
+    ],
+    grant: { neighborId: 'neighbor-1', scope: 'read' },
+    macKey,
+  });
+  assert(verifyCapabilityCard(card, macKey), 'card verifies with correct key');
+  assert(!verifyCapabilityCard(card, 'wrong-key'), 'card rejects wrong key');
+  assert(auditCardGlyphs(card), 'card glyphs match their canonical ids');
 
   console.log('glyph-adapter conformance ok');
 }
