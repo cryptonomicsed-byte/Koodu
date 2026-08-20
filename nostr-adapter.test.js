@@ -11,7 +11,7 @@ import assert from 'node:assert/strict';
 import {
   KIND_AGENT_ENGRAM,
   KIND_CLAIM,
-  relayAdmits,
+  isPublishable,
   canonicalSerialize,
   eventId,
   buildUnsignedEvent,
@@ -82,21 +82,27 @@ test('event id changes when any signed field changes', () => {
   assert.notEqual(id, eventId({ ...base, tags: [['d', 'a']] }));
 });
 
-test('the relay allowlist is enforced locally', () => {
-  assert.ok(relayAdmits(KIND_AGENT_ENGRAM));
-  assert.ok(relayAdmits(KIND_CLAIM));
-  assert.ok(relayAdmits(47999));
-  assert.ok(!relayAdmits(48000));
+test('every kind Kóòdù emits is publishable', () => {
+  assert.ok(isPublishable(KIND_AGENT_ENGRAM));
+  assert.ok(isPublishable(KIND_CLAIM));
   // The failure this guard exists to prevent: a plausible custom kind that the
   // relay drops after auth succeeds, which reads as an auth problem.
-  assert.ok(!relayAdmits(31337));
-  assert.ok(!relayAdmits(1));
+  assert.ok(!isPublishable(31337));
+});
+
+test('isPublishable does not claim the relay rejects other kinds', () => {
+  // The relay accepts far more than Kóòdù emits — kind 1, 7, 30023, 30315 and
+  // much of Buzz's vocabulary. false here means "not ours", never "refused".
+  // Conflating the two sent an earlier draft of this module into
+  // over-restricting, so this pins the distinction.
+  assert.ok(!isPublishable(7));
+  assert.ok(!isPublishable(1));
 });
 
 test('building an event under an unadmitted kind throws', () => {
   assert.throws(
     () => buildUnsignedEvent({ pubkey: PUBKEY, kind: 31337, content: '{}' }),
-    /not admitted by the Buzz relay allowlist/,
+    /is not one Kóòdù publishes under/,
   );
 });
 

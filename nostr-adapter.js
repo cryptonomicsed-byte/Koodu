@@ -60,17 +60,21 @@ export const CRUCIBLE_RESERVED = [47000, 48000];
 export const SLUG_PREFIX = 'mem/koodu';
 
 /**
- * True when the production Buzz relay's allowlist admits `kind`.
+ * True when `kind` is one Kóòdù is allowed to publish under.
  *
- * The relay rejects unknown kinds *after* authentication succeeds, with
- * `restricted: unknown event kind` — which reads like an auth failure and is
- * not one. Checking locally turns that into a clear error at the call site.
+ * Deliberately NOT a mirror of the relay's allowlist. That allowlist is a
+ * large match arm in `required_scope_for_kind` covering most of Buzz's own
+ * vocabulary (kind 1, 7, 30023, 30315 and many more), and a copy here would
+ * drift out of sync silently while claiming an authority this module does not
+ * have. What this states is narrower and checkable: the kinds Kóòdù emits.
+ *
+ * A `false` therefore means "not ours", never "the relay would refuse it".
+ * The relay does reject kinds with no match arm — after authentication
+ * succeeds, which reads like an auth failure and is not one — so checking
+ * locally still turns a caller's mistake into a clear error at the call site.
  */
-export function relayAdmits(kind) {
-  return (
-    kind === KIND_AGENT_ENGRAM ||
-    (kind >= CRUCIBLE_RESERVED[0] && kind < CRUCIBLE_RESERVED[1])
-  );
+export function isPublishable(kind) {
+  return kind === KIND_AGENT_ENGRAM || kind === KIND_CLAIM || kind === KIND_AUTH;
 }
 
 /**
@@ -101,10 +105,8 @@ export function eventId(event) {
  * @throws if `kind` would be rejected by the relay allowlist.
  */
 export function buildUnsignedEvent({ pubkey, kind, content, tags = [], createdAt }) {
-  if (!relayAdmits(kind)) {
-    throw new Error(
-      `kind ${kind} is not admitted by the Buzz relay allowlist (30174, 47000-47999)`,
-    );
+  if (!isPublishable(kind)) {
+    throw new Error(`kind ${kind} is not one Kóòdù publishes under`);
   }
   if (typeof pubkey !== 'string' || !/^[0-9a-f]{64}$/.test(pubkey)) {
     throw new Error('pubkey must be 64 hex characters (x-only secp256k1)');
@@ -214,7 +216,7 @@ export default {
   KIND_CLAIM,
   KIND_AUTH,
   SLUG_PREFIX,
-  relayAdmits,
+  isPublishable,
   canonicalSerialize,
   eventId,
   buildUnsignedEvent,
