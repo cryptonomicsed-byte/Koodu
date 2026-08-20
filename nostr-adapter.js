@@ -149,9 +149,77 @@ export function gateRecord({
   };
 }
 
-/** Slug for one gate decision. */
+/**
+ * minipae's slug grammar, which every engram address must satisfy.
+ *
+ * Verified against `minipae.py::validate_slug`: each `/`-separated segment
+ * after `mem/` must be non-empty, at most 64 bytes, start with a lowercase
+ * letter, digit or `_`, and contain only lowercase letters, digits, `_` and
+ * `-`. The whole slug must be at most 255 bytes.
+ */
+export function validateSlug(slug) {
+  if (Buffer.byteLength(slug) > 255) return false;
+  if (!slug.startsWith('mem/')) return false;
+  const rest = slug.slice(4);
+  if (!rest) return false;
+  return rest.split('/').every(
+    (part) =>
+      part.length > 0 &&
+      Buffer.byteLength(part) <= 64 &&
+      /^[a-z0-9_]/.test(part) &&
+      /^[a-z0-9_-]+$/.test(part),
+  );
+}
+
+/**
+ * Fold one path segment into minipae's grammar.
+ *
+ * Kóòdù's vocabulary is Yorùbá — `Ọjọ́ Ẹtì`, `ọjọ́-ògún-forge` — and none of it
+ * satisfies that grammar: capitals and diacritics are both rejected. An
+ * unnormalised `mem/koodu/gate/Friday/ọjọ́-ògún-forge` is refused outright by
+ * `minipae.py::validate_slug`, so an engram built from it would be
+ * unaddressable by every minipae client.
+ *
+ * Normalising loses nothing that matters. The slug is HMAC'd into the `d` tag
+ * before it reaches the wire, so it is an addressing key and never display
+ * text; the Yorùbá name travels intact in the event *content*, which is where
+ * a reader actually gets it from.
+ *
+ * Decomposes to NFD, drops combining marks (`ọ́` → `o`), lowercases, and maps
+ * anything still outside the grammar to `-`.
+ */
+export function normalizeSlugSegment(segment) {
+  const folded = String(segment)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]+/g, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 64);
+
+  if (!folded) {
+    throw new Error(
+      `slug segment ${JSON.stringify(segment)} normalises to nothing; ` +
+        'it cannot be used as an engram address',
+    );
+  }
+  return folded;
+}
+
+/**
+ * Slug for one gate decision.
+ *
+ * Both components are normalised, and the result is validated — a slug that
+ * minipae would reject is a bug worth failing on here rather than discovering
+ * as an unreadable engram later.
+ */
 export function slugGate(ritual, day) {
-  return `${SLUG_PREFIX}/gate/${day}/${ritual}`;
+  const slug = `${SLUG_PREFIX}/gate/${normalizeSlugSegment(day)}/${normalizeSlugSegment(ritual)}`;
+  if (!validateSlug(slug)) {
+    throw new Error(`built an invalid engram slug: ${slug}`);
+  }
+  return slug;
 }
 
 /**
@@ -222,6 +290,8 @@ export default {
   buildUnsignedEvent,
   gateRecord,
   slugGate,
+  validateSlug,
+  normalizeSlugSegment,
   gateEngram,
   gateClaim,
 };

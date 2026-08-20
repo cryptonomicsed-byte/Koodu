@@ -17,6 +17,8 @@ import {
   buildUnsignedEvent,
   gateRecord,
   slugGate,
+  validateSlug,
+  normalizeSlugSegment,
   gateEngram,
   gateClaim,
 } from './nostr-adapter.js';
@@ -177,6 +179,39 @@ test('an engram refuses to publish a raw slug in place of an HMACd d tag', () =>
 
 test('slug is namespaced to koodu', () => {
   assert.ok(slugGate('forge', 'Friday').startsWith('mem/koodu/'));
+});
+
+test('a Yoruba ritual name still produces a slug minipae accepts', () => {
+  // The bug this pins shut: mem/koodu/gate/Friday/ọjọ́-ògún-forge is REJECTED
+  // by minipae.py::validate_slug -- capital F, plus diacritics outside the
+  // [a-z0-9_-] grammar -- so the engram would be unaddressable by every
+  // minipae client. Normalising costs nothing: the slug is HMAC'd before it
+  // reaches the wire, and the Yorùbá name travels intact in the content.
+  const slug = slugGate('ọjọ́-ògún-forge', 'Friday');
+  assert.equal(slug, 'mem/koodu/gate/friday/ojo-ogun-forge');
+  assert.ok(validateSlug(slug));
+});
+
+test('slug validation matches minipae grammar', () => {
+  assert.ok(validateSlug('mem/koodu/gate/friday/forge'));
+  assert.ok(!validateSlug('mem/koodu/gate/Friday/forge'), 'capitals are rejected');
+  assert.ok(!validateSlug('mem/koodu/gate/friday/ọjọ́'), 'diacritics are rejected');
+  assert.ok(!validateSlug('mem/koodu//forge'), 'empty segments are rejected');
+  assert.ok(!validateSlug('koodu/gate'), 'must start with mem/');
+  assert.ok(!validateSlug(`mem/koodu/${'x'.repeat(65)}`), 'segments cap at 64 bytes');
+});
+
+test('normalisation folds diacritics and case', () => {
+  assert.equal(normalizeSlugSegment('Ọ̀rúnmìlà'), 'orunmila');
+  assert.equal(normalizeSlugSegment('Ọjọ́ Ẹtì'), 'ojo-eti');
+  assert.equal(normalizeSlugSegment('Earth + Metal'), 'earth-metal');
+});
+
+test('a segment that normalises to nothing fails loudly', () => {
+  // Silently producing an empty segment would build an invalid slug that only
+  // fails much later, at the relay or in another client.
+  assert.throws(() => normalizeSlugSegment('!!!'), /normalises to nothing/);
+  assert.throws(() => normalizeSlugSegment(''), /normalises to nothing/);
 });
 
 test('a claim without a falsifier is refused rather than emitted', () => {
