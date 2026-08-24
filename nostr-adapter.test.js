@@ -136,12 +136,12 @@ test('an unsigned event is complete except for sig', () => {
 
 test('a gate engram carries the d and p tags NIP-AE requires', () => {
   const record = gateRecord({
-    ritual: 'ọjọ́-ògún-forge',
+    ritual: 'ojo-ogun-forge',
     day: 'Friday',
-    orisha: 'Ògún',
+    domain: 'Run',
     element: 'Earth + Metal',
     allowed: true,
-    reason: 'within Ògún window',
+    reason: 'within the Run window',
   });
   const event = gateEngram({
     pubkey: PUBKEY,
@@ -156,9 +156,10 @@ test('a gate engram carries the d and p tags NIP-AE requires', () => {
   assert.ok(names.includes('p'));
   assert.equal(event.kind, KIND_AGENT_ENGRAM);
 
-  // A reader in another language must be able to parse the body.
+  // A reader in another language must be able to parse the body. Universal
+  // wording per OSOVM_CODEX §42 — never the internal Yorùbá anchor.
   const decoded = JSON.parse(event.content);
-  assert.equal(decoded.orisha, 'Ògún');
+  assert.equal(decoded.domain, 'Run');
   assert.equal(decoded.allowed, true);
 });
 
@@ -170,7 +171,7 @@ test('an engram refuses to publish a raw slug in place of an HMACd d tag', () =>
     () =>
       gateEngram({
         pubkey: PUBKEY,
-        record: gateRecord({ ritual: 'r', day: 'Friday', orisha: 'Ògún', element: 'Earth', allowed: true, reason: '' }),
+        record: gateRecord({ ritual: 'r', day: 'Friday', domain: 'Run', element: 'Earth', allowed: true, reason: '' }),
         ownerPubkey: PUBKEY,
       }),
     /must be HMACd by the key owner/,
@@ -236,14 +237,16 @@ test('a gate claim is a Crucible claim carrying its falsifier', () => {
   assert.equal(JSON.parse(event.content).half_life_secs, 86400);
 });
 
-test('yoruba ritual names round-trip through an event body intact', () => {
+test('gate domain on the wire is always the universal term, never the internal Yorùbá anchor', () => {
+  // OSOVM_CODEX §42: every user/external-facing surface speaks universal
+  // wording only. Ọ̀rúnmìlà never reaches the wire — its public name is Query.
   const record = gateRecord({
-    ritual: 'ọjọ́-ọ̀rúnmìlà-ìwúre',
+    ritual: 'divination-window',
     day: 'Wednesday',
-    orisha: 'Ọ̀rúnmìlà',
+    domain: 'Query',
     element: 'Ether',
     allowed: true,
-    reason: 'ọjọ́ rú',
+    reason: 'within the Query window',
   });
   const event = gateEngram({
     pubkey: PUBKEY,
@@ -253,6 +256,7 @@ test('yoruba ritual names round-trip through an event body intact', () => {
     createdAt: 1700000000,
   });
   const decoded = JSON.parse(event.content);
-  assert.equal(decoded.ritual, 'ọjọ́-ọ̀rúnmìlà-ìwúre');
-  assert.equal(decoded.orisha, 'Ọ̀rúnmìlà');
+  assert.equal(decoded.domain, 'Query');
+  assert.ok(!/Ọ̀rúnmìlà|Orunmila/i.test(event.content), 'internal anchor name must not leak onto the wire');
+  assert.ok(event.tags.some((t) => t[0] === 'domain' && t[1] === 'Query'));
 });

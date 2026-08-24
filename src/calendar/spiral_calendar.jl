@@ -122,7 +122,7 @@ Special days when protocol rules shift.
 struct GateDay
     day_of_year::Int
     name::String
-    gate_type::String  # "equinox", "solstice", "jubilee", "eshu²", "void"
+    gate_type::String  # "equinox", "solstice", "jubilee", "access²", "void"
     economic_effect::Dict{String,Any}
 end
 
@@ -153,11 +153,11 @@ function find_gate_days(year::Year, spiral_ref::Function)::Vector{GateDay}
             Dict("out_of_time" => true, "pure_ritual" => true, "minting_paused" => true)))
     end
     
-    # Èṣù² nodes (every 12 days in veil cycle)
+    # Access² nodes (every 12 days in veil cycle)
     for day in 1:365
         veil = mod(day-1, 350) + 1
         if mod(veil, 12) == 0
-            push!(gates, GateDay(day, "Èṣù² Node", "eshu²",
+            push!(gates, GateDay(day, "Access² Node", "access²",
                 Dict("tithe_enforced" => true, "crossroads" => true, "branch_merge" => true)))
         end
     end
@@ -204,16 +204,16 @@ function generate_year_almanac(year_num::Int, btc_start_height::Int)::Dict{Strin
             "moon" => Dict(
                 "number" => moon.number,
                 "name" => moon.name,
-                "orisa" => moon.orisa,
+                "domain" => SacredTime.universal_domain_name(moon.orisa),
                 "star_anchor" => moon.star_anchor
             ),
             "day_in_moon" => day_in_moon,
-            "five_layer_orisa" => Dict(
-                "day" => SacredTime.ORISA_NAMES[Int(spiral.day_osa)+1],
-                "week" => SacredTime.ORISA_NAMES[Int(spiral.week_osa)+1],
-                "moon" => SacredTime.ORISA_NAMES[Int(spiral.moon_osa)+1],
-                "year" => SacredTime.ORISA_NAMES[Int(spiral.year_osa)+1],
-                "jubilee" => SacredTime.ORISA_NAMES[Int(spiral.jubilee_osa)+1]
+            "five_layer_domains" => Dict(
+                "day" => SacredTime.universal_domain_name(spiral.day_osa),
+                "week" => SacredTime.universal_domain_name(spiral.week_osa),
+                "moon" => SacredTime.universal_domain_name(spiral.moon_osa),
+                "year" => SacredTime.universal_domain_name(spiral.year_osa),
+                "jubilee" => SacredTime.universal_domain_name(spiral.jubilee_osa)
             ),
             "veil" => Dict(
                 "number" => spiral.veil_number,
@@ -221,8 +221,8 @@ function generate_year_almanac(year_num::Int, btc_start_height::Int)::Dict{Strin
                 "archetypal" => veil_to_archetypal(spiral.veil_number)
             ),
             "gates" => Dict(
-                "active" => string(gate),
-                "eshu_squared" => spiral.eshu_squared,
+                "active" => SacredTime.universal_gate_name(gate),
+                "access_squared" => spiral.eshu_squared,
                 "sabbath" => spiral.btc.is_sabbath,
                 "void" => spiral.void_day
             ),
@@ -293,15 +293,15 @@ function to_ritual_codex_json(almanac::Dict{String,Any})::String
         resonance = Dict(
             "day" => day_to_english(day["day_of_year"]),
             "yoruba_name" => day_to_yoruba(day["day_of_year"]),
-            "archetype" => "$(day["five_layer_orisa"]["day"])-$(day["moon"]["orisa"])²",
-            
+            "archetype" => "$(day["five_layer_domains"]["day"])-$(day["moon"]["domain"])²",
+
             # Spiral overlay (new)
             "spiral_time" => Dict(
                 "btc_height" => day["btc_height"],
                 "veil_number" => day["veil"]["number"],
                 "veil_esoteric" => day["veil"]["esoteric"],
                 "veil_archetypal" => day["veil"]["archetypal"],
-                "five_layer_orisa" => day["five_layer_orisa"],
+                "five_layer_domains" => day["five_layer_domains"],
                 "moon" => day["moon"],
                 "gates" => day["gates"]
             ),
@@ -344,29 +344,32 @@ function day_to_frequency(doy::Int)::Float64
 end
 
 function generate_mantra(day::Dict)::String
-    base = day["five_layer_orisa"]["day"]
+    base = day["five_layer_domains"]["day"]
     veil = day["veil"]["archetypal"]
     "I align with $(base) at the crossroads of $(veil), trusting the spiral."
 end
 
+# Offering descriptions carry traditional ritual-practice content — same
+# deliberate-internal-content class as If-Script's odu_ifa corpus (OSOVM_CODEX
+# §42). The gate/moon CHECKS below now key on the universal domain field.
 function generate_offerings(day::Dict)::Vector{String}
     offerings = String[]
-    
-    if day["gates"]["eshu_squared"]
+
+    if day["gates"]["access_squared"]
         push!(offerings, "Èṣù: Palm oil, corn, rum at crossroads")
     end
-    
+
     if day["gates"]["sabbath"]
         push!(offerings, "Ọbàtálá: White cloth, coconut milk, calm reflection")
     end
-    
-    moon = day["moon"]["orisa"]
-    if moon == "Ọ̀ṣun"
+
+    moon = day["moon"]["domain"]
+    if moon == "History"
         push!(offerings, "Ọ̀ṣun: Honey, pumpkin, brass bell at river")
-    elseif moon == "Ṣàngó"
+    elseif moon == "Score"
         push!(offerings, "Ṣàngó: Bitter kola, red cloth, thunderstone")
     end
-    
+
     offerings
 end
 

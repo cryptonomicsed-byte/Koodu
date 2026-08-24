@@ -1,10 +1,11 @@
 /**
  * Kóòdù → Nostr wire adapter.
  *
- * Kóòdù decides what an agent may do on a given day: which Òrìṣà governs it,
- * which practices are prescribed, whether a ritual falls inside its window.
- * Until now those decisions stayed inside the codex — an agent could act on
- * them, but the swarm had no way to see what governed the act.
+ * Kóòdù decides what an agent may do on a given day: which domain governs it
+ * (internal anchor: Òrìṣà — see OSOVM_CODEX §42), which practices are
+ * prescribed, whether a ritual falls inside its window. Until now those
+ * decisions stayed inside the codex — an agent could act on them, but the
+ * swarm had no way to see what governed the act.
  *
  * This builds the Nostr events that carry a gate decision onto the same wire
  * every other pillar speaks.
@@ -132,7 +133,7 @@ export function buildUnsignedEvent({ pubkey, kind, content, tags = [], createdAt
 export function gateRecord({
   ritual,
   day,
-  orisha,
+  domain,
   element,
   allowed,
   reason,
@@ -141,7 +142,7 @@ export function gateRecord({
   return {
     ritual,
     day,
-    orisha,
+    domain,
     element,
     allowed,
     reason,
@@ -182,8 +183,9 @@ export function validateSlug(slug) {
  *
  * Normalising loses nothing that matters. The slug is HMAC'd into the `d` tag
  * before it reaches the wire, so it is an addressing key and never display
- * text; the Yorùbá name travels intact in the event *content*, which is where
- * a reader actually gets it from.
+ * text; the segment itself is passed in already-normalized (universal
+ * wording per OSOVM_CODEX §42 — the internal Yorùbá name never reaches this
+ * function or the wire).
  *
  * Decomposes to NFD, drops combining marks (`ọ́` → `o`), lowercases, and maps
  * anything still outside the grammar to `-`.
@@ -242,7 +244,7 @@ export function gateEngram({ pubkey, record, ownerPubkey, dTag, createdAt }) {
     tags: [
       ['d', dTag],
       ['p', ownerPubkey],
-      ['orisha', record.orisha],
+      ['domain', record.domain],
       ['gates', String(record.allowed)],
     ],
     createdAt,

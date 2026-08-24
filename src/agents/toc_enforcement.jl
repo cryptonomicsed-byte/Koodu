@@ -219,13 +219,13 @@ function enforce_gate_constraints(action::Action,
         return (allowed = false, reason = "void_gate")
     end
 
-    # Èṣù²: tithe must be doubled at crossroads
+    # Access²: tithe must be doubled at crossroads (internal anchor: Èṣù²)
     if gate == SacredTime.ÈṢÙ² && action.amount > 0.0
         doubled_tithe = action.amount * toc.tithe_rate * 2.0
         tithe_paid = get(action.metadata, "tithe_included", 0.0)
         if tithe_paid < doubled_tithe
-            @warn "ToC GATE DENIED: Èṣù² — doubled tithe required ($(doubled_tithe))"
-            return (allowed = false, reason = "eshu_squared_tithe")
+            @warn "ToC GATE DENIED: Access² — doubled tithe required ($(doubled_tithe))"
+            return (allowed = false, reason = "access_squared_tithe")
         end
     end
 

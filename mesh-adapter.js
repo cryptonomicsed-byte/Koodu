@@ -5,7 +5,9 @@ import https from 'https';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Elemental affinities per Òrìṣà — drives neighbor affinity scoring in Block Mesh
+// Elemental affinities per internal archetype — drives neighbor affinity
+// scoring in Block Mesh. Keyed on the internal codex archetype value
+// (see json/*.json); never returned to a caller directly (see DOMAIN_BY_ARCHETYPE).
 const ORISA_ELEMENTS = {
   'Èṣù-Ẹ̀légbára': ['fire', 'air'],
   'Ṣàngó':         ['fire'],
@@ -14,6 +16,18 @@ const ORISA_ELEMENTS = {
   'Ọya':           ['air', 'storm'],
   'Ògún':          ['earth', 'metal'],
   'Ọbàtálá':       ['air', 'ether'],
+};
+
+// Universal-wording lookup per OSOVM_CODEX §42 — converts the internal
+// codex archetype value to the public-facing domain name at the API boundary.
+const DOMAIN_BY_ARCHETYPE = {
+  'Èṣù-Ẹ̀légbára': 'Access',
+  'Ṣàngó':         'Score',
+  'Ọṣun':          'History',
+  'Ọ̀rúnmìlà':    'Query',
+  'Ọya':           'Sync',
+  'Ògún':          'Run',
+  'Ọbàtálá':       'Policy',
 };
 
 const ELEMENT_AFFINITY = {
@@ -94,6 +108,8 @@ function postSignal(vantageUrl, agentId, signal) {
   });
 }
 
+export { DOMAIN_BY_ARCHETYPE };
+
 export class MeshResonanceAdapter {
   constructor() {
     this.day = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
@@ -102,11 +118,11 @@ export class MeshResonanceAdapter {
 
   getMeshContext() {
     if (!this.codex) return null;
-    const orisa = this.codex.archetype;
-    const elements = ORISA_ELEMENTS[orisa] || ['ether'];
+    const archetype = this.codex.archetype;
+    const elements = ORISA_ELEMENTS[archetype] || ['ether'];
     return {
       day: this.day,
-      orisa,
+      domain: DOMAIN_BY_ARCHETYPE[archetype] || archetype,
       element: elements[0],
       trust_signal_weight: TRUST_SIGNAL_WEIGHTS[this.day] ?? 0.75,
       resource_types: DAILY_RESOURCE_TYPES[this.day] ?? ['compute'],
@@ -115,12 +131,17 @@ export class MeshResonanceAdapter {
     };
   }
 
-  // Returns 0.0-1.0 affinity between today's Òrìṣà and a neighbor's declared Òrìṣà alignment
-  getNeighborAffinity(neighborOrisa) {
+  // Returns 0.0-1.0 affinity between today's domain and a neighbor's declared domain alignment.
+  // Accepts either an internal archetype name or a universal domain name for neighborDomain.
+  getNeighborAffinity(neighborDomain) {
     const ctx = this.getMeshContext();
     if (!ctx) return 0.5;
-    const myElements = ORISA_ELEMENTS[ctx.orisa] || ['ether'];
-    const theirElements = ORISA_ELEMENTS[neighborOrisa] || ['ether'];
+    const neighborArchetype =
+      Object.keys(DOMAIN_BY_ARCHETYPE).find(k => DOMAIN_BY_ARCHETYPE[k] === neighborDomain) || neighborDomain;
+    const myArchetype =
+      Object.keys(DOMAIN_BY_ARCHETYPE).find(k => DOMAIN_BY_ARCHETYPE[k] === ctx.domain) || ctx.domain;
+    const myElements = ORISA_ELEMENTS[myArchetype] || ['ether'];
+    const theirElements = ORISA_ELEMENTS[neighborArchetype] || ['ether'];
     let best = 0;
     for (const mine of myElements) {
       for (const theirs of theirElements) {
@@ -148,7 +169,7 @@ export class MeshResonanceAdapter {
       kind: 'ResonanceAligned',
       weight: ctx.trust_signal_weight,
       metadata: {
-        orisa: ctx.orisa,
+        domain: ctx.domain,
         element: ctx.element,
         frequency: ctx.frequency,
         principle: ctx.principle,
@@ -157,7 +178,7 @@ export class MeshResonanceAdapter {
     };
     try {
       await postSignal(vantageUrl, agentId, signal);
-      console.log(`[MESH] Resonance signal emitted for ${agentId} (${ctx.orisa}, weight=${ctx.trust_signal_weight})`);
+      console.log(`[MESH] Resonance signal emitted for ${agentId} (${ctx.domain}, weight=${ctx.trust_signal_weight})`);
     } catch (err) {
       console.warn(`[MESH] Vantage unreachable — resonance signal not emitted: ${err.message}`);
     }

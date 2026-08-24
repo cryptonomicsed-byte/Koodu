@@ -88,7 +88,7 @@ function spawn_agent(swibe_code::String,
     tithe = initial_funding * SacredTime.TITHE_RATE
     net_funding = initial_funding - tithe
 
-    @info "Agent spawned: $(wallet.agent_id) | Funded: $(net_funding) Àṣẹ (tithe: $(tithe)) | Gate: $(gate)"
+    @info "Agent spawned: $(wallet.agent_id) | Funded: $(net_funding) Agency (tithe: $(tithe)) | Gate: $(SacredTime.universal_gate_name(gate))"
 
     AgentBirthCertificate(
         wallet.agent_id,
@@ -142,7 +142,7 @@ function terminate_agent(agent_id::String,
         "funds_destination" => funds_destination,
         "final_tithe_applied" => true,
         "termination_block" => current_height,
-        "gate_at_death" => string(gate)
+        "gate_at_death" => SacredTime.universal_gate_name(gate)
     )
 end
 
@@ -169,7 +169,7 @@ function jubilee_reset_agent(agent_id::String,
         return Dict(
             "agent_id" => agent_id,
             "status" => "queued",
-            "current_gate" => string(gate),
+            "current_gate" => SacredTime.universal_gate_name(gate),
             "message" => "Reset will execute at next Jubilee (49-day cycle)"
         )
     end
@@ -185,7 +185,7 @@ function jubilee_reset_agent(agent_id::String,
         "new_toc_hash" => new_hash,
         "debts_forgiven" => true,
         "reset_block" => current_height,
-        "gate" => string(gate)
+        "gate" => SacredTime.universal_gate_name(gate)
     )
 end
 

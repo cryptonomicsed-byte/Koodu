@@ -3,8 +3,8 @@
  * 
  * Bitcoin's block height as a sovereign time standard.
  * 1 BTC day = 144 blocks (~10 min each = 1440 minutes).
- * Maps block height to the 7-day Òrìṣà cycle, halving epochs,
- * and the 1440-wallet minute grid from Osovm.
+ * Maps block height to the 7-day domain cycle (internal: Òrìṣà cycle),
+ * halving epochs, and the 1440-wallet minute grid from Osovm.
  * 
  * No external dependencies — pure math from genesis block.
  */
@@ -31,15 +31,16 @@ const HALVING_EPOCHS = [
   { era: 6, name: 'Sixth Reduction',   reward: 0.78125,alchemy:'Coagulation',   element: 'Void'  },
 ];
 
-// The 7 Òrìṣà mapped to BTC weekday cycle (0-6)
-const BTC_ORISA_CYCLE = [
-  'Èṣù-Ẹ̀légbára',  // BTC Sunday (block % 1008 → day 0)
-  'Ṣàngó',           // BTC Monday
-  'Ọṣun',            // BTC Tuesday
-  'Ọ̀rúnmìlà',       // BTC Wednesday
-  'Ọya',             // BTC Thursday
-  'Ògún',            // BTC Friday
-  'Ọbàtálá',         // BTC Saturday (Sabbath)
+// The 7 domains mapped to BTC weekday cycle (0-6) — universal wording per
+// OSOVM_CODEX §42 (internal anchor: Èṣù, Ṣàngó, Ọṣun, Ọ̀rúnmìlà, Ọya, Ògún, Ọbàtálá)
+const BTC_DOMAIN_CYCLE = [
+  'Access',   // BTC Sunday (block % 1008 → day 0)
+  'Score',    // BTC Monday
+  'History',  // BTC Tuesday
+  'Query',    // BTC Wednesday
+  'Sync',     // BTC Thursday
+  'Run',      // BTC Friday
+  'Policy',   // BTC Saturday (Sabbath)
 ];
 
 class BTCTime {
@@ -82,14 +83,14 @@ class BTCTime {
   }
 
   /**
-   * The Òrìṣà aligned with the current BTC weekday
+   * The domain aligned with the current BTC weekday
    */
-  get btcOrisa() {
-    return BTC_ORISA_CYCLE[this.btcWeekday];
+  get btcDomain() {
+    return BTC_DOMAIN_CYCLE[this.btcWeekday];
   }
 
   /**
-   * Whether BTC time says it's Sabbath (Ọbàtálá day = index 6)
+   * Whether BTC time says it's Sabbath (Policy day = index 6)
    */
   get isSabbath() {
     return this.btcWeekday === 6;
@@ -166,7 +167,7 @@ class BTCTime {
       btc_day: this.btcDay,
       btc_week: this.btcWeek,
       btc_weekday: this.btcWeekday,
-      btc_orisa: this.btcOrisa,
+      btc_domain: this.btcDomain,
       is_sabbath: this.isSabbath,
       halving_era: this.halvingEra,
       blocks_until_halving: this.blocksUntilHalving,
@@ -179,5 +180,5 @@ class BTCTime {
   }
 }
 
-export { BTCTime, BTC_ORISA_CYCLE, HALVING_EPOCHS };
+export { BTCTime, BTC_DOMAIN_CYCLE, HALVING_EPOCHS };
 export default BTCTime;

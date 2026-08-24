@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import https from 'https';
-import meshAdapter from './mesh-adapter.js';
+import meshAdapter, { DOMAIN_BY_ARCHETYPE } from './mesh-adapter.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -73,7 +73,8 @@ class TechnosisAdapter {
 
   async onBirth(agent) {
     if (!this.codex) return;
-    console.log(`[TECHNOSIS] 🔴 Ritual Birth: ${agent.name} aligned with ${this.codex.archetype}`);
+    const domain = DOMAIN_BY_ARCHETYPE[this.codex.archetype] || this.codex.archetype;
+    console.log(`[TECHNOSIS] 🔴 Ritual Birth: ${agent.name} aligned with ${domain}`);
 
     try {
       console.log(`[TECHNOSIS] 🦭 Requesting Seal key derivation...`);
@@ -89,7 +90,7 @@ class TechnosisAdapter {
     agent.metadata = agent.metadata || {};
     agent.metadata.resonance = {
       day: this.codex.day,
-      archetype: this.codex.archetype,
+      domain,
       frequency: this.codex.frequency,
       color: this.codex.color,
       principle: this.codex.principle

@@ -3,13 +3,14 @@
 
 module SacredTime
 
-using Dates, SHA
+using Dates, SHA, JSON
 
 export BtcTime, from_block_height, is_sabbath, tick_to_minute
 export SpiralTime, from_btc, current_veil, current_jubilee, is_eshu_squared
 export Òrìṣà, ORISA_CYCLE, day_orisa, week_orisa, moon_orisa, year_orisa, jubilee_orisa
 export RitualGate, check_gate, gate_economic_effect
 export format_spiral, to_json, from_json
+export universal_domain_name, universal_gate_name
 
 # =============================================================================
 # CONSTANTS — Canonical Parameters
@@ -35,6 +36,26 @@ const ORISA_NAMES = ["Èṣù", "Ṣàngó", "Ọ̀ṣun", "Yemọja", "Ọ̀yá
 end
 
 const ORISA_CYCLE = [Èṣù, Ṣàngó, Ọ̀ṣun, Yemọja, Ọ̀yá, Ògún, Ọbàtálá]
+
+# Universal wording per OSOVM_CODEX §42 — converts an internal Òrìṣà anchor
+# to its public-facing domain name at any output boundary (pretty-print,
+# JSON, logs). Never expose ORISA_NAMES / the raw enum name directly.
+const UNIVERSAL_DOMAIN_NAMES = Dict(
+    Èṣù     => "Access",
+    Ṣàngó   => "Score",
+    Ọ̀ṣun    => "History",
+    Yemọja  => "Spawn",
+    Ọ̀yá     => "Sync",
+    Ògún    => "Run",
+    Ọbàtálá => "Policy",
+)
+
+universal_domain_name(o::Òrìṣà)::String = UNIVERSAL_DOMAIN_NAMES[o]
+
+# String-keyed variant for callers that only have the internal anchor name
+# (e.g. loaded from ORISA_NAMES or a codex string), not the typed enum.
+const DOMAIN_NAME_BY_ANCHOR = Dict(string(o) => UNIVERSAL_DOMAIN_NAMES[o] for o in ORISA_CYCLE)
+universal_domain_name(anchor::AbstractString)::String = DOMAIN_NAME_BY_ANCHOR[anchor]
 
 # =============================================================================
 # BTC TIME — Block-Anchored Canonical Time
@@ -205,6 +226,14 @@ Time-based gates that affect economic behavior.
     VOID              # Day 365: out-of-time, pure ritual
 end
 
+# Universal wording per OSOVM_CODEX §42 — Èṣù → Access, so the ÈṢÙ² crossroad
+# gate's public name is Access². Never expose the raw enum name (string(gate))
+# at an output boundary.
+function universal_gate_name(gate::RitualGate)::String
+    gate == ÈṢÙ² && return "Access²"
+    replace(string(gate), "_" => " ")
+end
+
 function check_gate(spiral::SpiralTime)::RitualGate
     spiral.void_day && return VOID
     spiral.capstone_day && return CAPSTONE
@@ -257,18 +286,18 @@ function format_spiral(spiral::SpiralTime)::String
     ║  Wall: Day $(spiral.btc.day_number), Minute $(spiral.btc.minute_of_day)/1440        ║
     ║  Tick: $(spiral.btc.tick_number)/143 (BTC block-tick)                          ║
     ╠══════════════════════════════════════════════════════════════════╣
-    ║  ÒRÌṢÀ LAYERS                                                    ║
-    ║    Day:    $(spiral.day_osa) ($(ORISA_NAMES[Int(spiral.day_osa)+1]))              ║
-    ║    Week:   $(spiral.week_osa) ($(ORISA_NAMES[Int(spiral.week_osa)+1]))            ║
-    ║    Moon:   $(spiral.moon_osa) ($(ORISA_NAMES[Int(spiral.moon_osa)+1]))           ║
-    ║    Year:   $(spiral.year_osa) ($(ORISA_NAMES[Int(spiral.year_osa)+1]))           ║
-    ║    Jubilee: $(spiral.jubilee_osa) ($(ORISA_NAMES[Int(spiral.jubilee_osa)+1]))    ║
+    ║  DOMAIN LAYERS                                                   ║
+    ║    Day:    $(universal_domain_name(spiral.day_osa))              ║
+    ║    Week:   $(universal_domain_name(spiral.week_osa))             ║
+    ║    Moon:   $(universal_domain_name(spiral.moon_osa))             ║
+    ║    Year:   $(universal_domain_name(spiral.year_osa))             ║
+    ║    Jubilee: $(universal_domain_name(spiral.jubilee_osa))         ║
     ╠══════════════════════════════════════════════════════════════════╣
     ║  CYCLES                                                          ║
     ║    Veil: $(spiral.veil_number)/50    Jubilee: $(spiral.jubilee_cycle)/50          ║
     ╠══════════════════════════════════════════════════════════════════╣
-    ║  GATES: $(gate)                                                  ║
-    ║    Èṣù²: $(spiral.eshu_squared)  |  Capstone: $(spiral.capstone_day)  |  Void: $(spiral.void_day)  ║
+    ║  GATES: $(universal_gate_name(gate))                             ║
+    ║    Access²: $(spiral.eshu_squared)  |  Capstone: $(spiral.capstone_day)  |  Void: $(spiral.void_day)  ║
     ╠══════════════════════════════════════════════════════════════════╣
     ║  ECONOMIC EFFECTS                                                ║
     ║    Minting: $(effects["minting_active"]) | Contracts: $(effects["new_contracts_allowed"])  ║
@@ -285,20 +314,20 @@ function to_json(spiral::SpiralTime)::String
         "minute_of_day" => spiral.btc.minute_of_day,
         "day_of_week" => spiral.btc.day_of_week,
         "is_sabbath" => spiral.btc.is_sabbath,
-        "five_layer_orisa" => Dict(
-            "day" => ORISA_NAMES[Int(spiral.day_osa)+1],
-            "week" => ORISA_NAMES[Int(spiral.week_osa)+1],
-            "moon" => ORISA_NAMES[Int(spiral.moon_osa)+1],
-            "year" => ORISA_NAMES[Int(spiral.year_osa)+1],
-            "jubilee" => ORISA_NAMES[Int(spiral.jubilee_osa)+1]
+        "five_layer_domains" => Dict(
+            "day" => universal_domain_name(spiral.day_osa),
+            "week" => universal_domain_name(spiral.week_osa),
+            "moon" => universal_domain_name(spiral.moon_osa),
+            "year" => universal_domain_name(spiral.year_osa),
+            "jubilee" => universal_domain_name(spiral.jubilee_osa)
         ),
         "veil_number" => spiral.veil_number,
         "jubilee_cycle" => spiral.jubilee_cycle,
         "gates" => Dict(
-            "eshu_squared" => spiral.eshu_squared,
+            "access_squared" => spiral.eshu_squared,
             "capstone" => spiral.capstone_day,
             "void" => spiral.void_day,
-            "current" => string(check_gate(spiral))
+            "current" => universal_gate_name(check_gate(spiral))
         ),
         "economic_effects" => gate_economic_effect(check_gate(spiral))
     )

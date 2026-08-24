@@ -13,21 +13,23 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  *   2. BTC Time (block height) — the sovereign chain day
  *   3. Spiral Position — where both streams converge or diverge
  * 
- * When BTC time and Gregorian time align on the same Òrìṣà,
+ * When BTC time and Gregorian time align on the same domain,
  * that's a "Resonance Day" — sacred operations carry double weight.
  * When they diverge, the spiral reveals a "Tension Day" — 
  * two archetypes in dialogue.
  */
 
-// Day name → index mapping (matches BTC_ORISA_CYCLE order)
+// Day name → index mapping (matches BTC_DOMAIN_CYCLE order)
 const DAY_INDEX = {
   sunday: 0, monday: 1, tuesday: 2, wednesday: 3,
   thursday: 4, friday: 5, saturday: 6
 };
 
-const ORISA_BY_INDEX = [
-  'Èṣù-Ẹ̀légbára', 'Ṣàngó', 'Ọṣun',
-  'Ọ̀rúnmìlà', 'Ọya', 'Ògún', 'Ọbàtálá'
+// Universal wording per OSOVM_CODEX §42 (internal anchor: Èṣù, Ṣàngó, Ọṣun,
+// Ọ̀rúnmìlà, Ọya, Ògún, Ọbàtálá)
+const DOMAIN_BY_INDEX = [
+  'Access', 'Score', 'History',
+  'Query', 'Sync', 'Run', 'Policy'
 ];
 
 // Spiral phase names — the relationship between two time streams
@@ -82,7 +84,7 @@ class SpiralCalendar {
   }
 
   /**
-   * True when BTC and Gregorian both point to the same Òrìṣà
+   * True when BTC and Gregorian both point to the same domain
    */
   get isResonanceDay() {
     return this.spiralOffset === 0;
@@ -110,12 +112,12 @@ class SpiralCalendar {
   }
 
   /**
-   * The two Òrìṣà in play today
+   * The two domains in play today
    * On Resonance days, both are the same.
    */
   get activeArchetypes() {
-    const gregorian = ORISA_BY_INDEX[this.gregorianIndex];
-    const btc = this.btc.btcOrisa;
+    const gregorian = DOMAIN_BY_INDEX[this.gregorianIndex];
+    const btc = this.btc.btcDomain;
     if (gregorian === btc) {
       return { mode: 'unified', primary: gregorian };
     }
@@ -128,7 +130,7 @@ class SpiralCalendar {
   }
 
   /**
-   * Ritual weight multiplier for Àṣẹ operations.
+   * Ritual weight multiplier for Agency operations.
    * Resonance = 2x, normal = 1x, Opposition = 0.5x (reflect, don't act).
    * Sabbath always overrides to 0 (freeze).
    */
@@ -149,7 +151,7 @@ class SpiralCalendar {
       // Gregorian stream
       gregorian: {
         day: this.gregorianDay,
-        orisa: ORISA_BY_INDEX[this.gregorianIndex],
+        domain: DOMAIN_BY_INDEX[this.gregorianIndex],
         frequency: gregorianCodex?.frequency || null,
         principle: gregorianCodex?.principle || null,
         color: gregorianCodex?.color || null
@@ -187,17 +189,17 @@ class SpiralCalendar {
   toString() {
     const s = this.snapshot();
     const phase = s.spiral.phase;
-    const gOrisa = s.gregorian.orisa;
-    const bOrisa = s.btc.btc_orisa;
+    const gDomain = s.gregorian.domain;
+    const bDomain = s.btc.btc_domain;
     const block = s.btc.block_height;
     const era = s.epoch.name;
 
     if (s.spiral.is_resonance) {
-      return `⟐ RESONANCE [${gOrisa}] block:${block} era:${era} weight:${s.spiral.ritual_weight}x`;
+      return `⟐ RESONANCE [${gDomain}] block:${block} era:${era} weight:${s.spiral.ritual_weight}x`;
     }
-    return `⟐ ${phase.toUpperCase()} [${gOrisa} ↔ ${bOrisa}] block:${block} era:${era} weight:${s.spiral.ritual_weight}x`;
+    return `⟐ ${phase.toUpperCase()} [${gDomain} ↔ ${bDomain}] block:${block} era:${era} weight:${s.spiral.ritual_weight}x`;
   }
 }
 
-export { SpiralCalendar, SPIRAL_PHASES, ORISA_BY_INDEX };
+export { SpiralCalendar, SPIRAL_PHASES, DOMAIN_BY_INDEX };
 export default SpiralCalendar;

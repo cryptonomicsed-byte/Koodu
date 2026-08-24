@@ -157,7 +157,7 @@ function wallet_balance(wallet::BIPON39Wallet)::Dict{String,Any}
         "tee_sealed" => wallet.tee_sealed,
         "private_key_sui_encrypted" => wallet.private_key_sui.encrypted,
         "birth_block" => wallet.birth_block,
-        "odu_signature" => wallet.odu_signature
+        "signature" => wallet.odu_signature
     )
 end
 
