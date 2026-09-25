@@ -104,7 +104,7 @@ This thread is now consecrated for Sunday ritual work — a day aligned with È�
 2. **Planetary Ruler**: Sun (Ìmúlò Ayé — vitality, life force, illumination)
 3. **Chakra**: Root Chakra (Ìpìlẹ̀ — foundation, grounding)
 4. **Tone / Frequency**: Do (C) — 396 Hz (liberation)
-5. **Hermetic Principle**: Cause and Effect
+5. **Hermetic Principle**: Mentalism – “The All is Mind”
 6. **Elements**: Iná àti Afẹ́fẹ́ (fire and air)
 7. **Òrìṣà**: Èṣù-Ẹ̀légbára
 8. **Òrìṣà Colors**: Pupa àti Dúdú (red and black)
@@ -202,7 +202,7 @@ This day is aligned with Ṣàngó, the Òrìṣà of Thunder, Fire, and Divine 
 2. **Planetary Ruler**: Mars
 3. **Chakra**: Sacral
 4. **Tone / Frequency**: Re (D) · 288 Hz
-5. **Hermetic Principle**: Polarity
+5. **Hermetic Principle**: Cause & Effect – “Every cause has its effect”
 6. **Element**: Fire (Iná)
 7. **Òrìṣà**: Ṣàngó
 8. **Colors**: Red + White
@@ -304,7 +304,7 @@ This thread is consecrated for Tuesday ritual work, under the glowing magnetism 
 2. **Planetary Ruler**: Venus
 3. **Chakra**: Solar Plexus (Ìpinnu Ọkàn)
 4. **Tone / Frequency**: Mi (E) – 528 Hz
-5. **Hermetic Principle**: Rhythm
+5. **Hermetic Principle**: Vibration – “Nothing rests; everything moves”
 6. **Element**: Water (Omi) — flowing pleasure
 7. **Òrìṣà**: Ọ̀ṣun
 8. **Colors**: Yellow and Gold
@@ -398,7 +398,7 @@ This thread is consecrated for Wednesday ritual work, under the nurturing depth 
 2. **Planetary Ruler**: Mercury (communication, memory, wisdom)
 3. **Chakra**: Heart Chakra (unconditional love, nurturing energy)
 4. **Tone (Music)**: Fa (F) – 639 Hz
-5. **Hermetic Principle**: Cause and Effect – “Every cause has an effect”
+5. **Hermetic Principle**: Correspondence
 6. **Element**: Water (wisdom, healing, comfort)
 7. **Òrìṣà**: Yemọja
 8. **Òrìṣà Color**: Blue and White
@@ -492,7 +492,7 @@ This thread is consecrated for Thursday ritual work, under the transformative po
 2. **Planetary Ruler**: Jupiter (expansion, upheaval, divine storms)
 3. **Chakra**: Throat Chakra (voice, winds of truth)
 4. **Tone (Music)**: Sol (G) – 741 Hz
-5. **Hermetic Principle**: Vibration – “Nothing rests; everything moves”
+5. **Hermetic Principle**: Rhythm
 6. **Element**: Air (tempest, breath, mind)
 7. **Òrìṣà**: Ọya
 8. **Òrìṣà Color**: Burgundy, Maroon, Deep Purple
@@ -586,7 +586,7 @@ This thread is consecrated for Friday ritual work, under the disciplined mastery
 2. **Planetary Ruler**: Saturn (discipline, structure, legacy)
 3. **Chakra**: Root Chakra (grounding, action, survival)
 4. **Tone (Music)**: La (A) – 852 Hz
-5. **Hermetic Principle**: Cause and Effect – “Every cause has its effect”
+5. **Hermetic Principle**: Polarity
 6. **Element**: Earth + Metal (tools, labor, precision)
 7. **Òrìṣà**: Ògún
 8. **Òrìṣà Color**: Dark Green and Black
@@ -680,7 +680,7 @@ This thread is consecrated for Saturday ritual work, under the serene wisdom of 
 2. **Planetary Ruler**: Saturn (Karmic order, sacred pause, ancestral contracts)
 3. **Chakra**: Crown Chakra
 4. **Tone**: Ti (B) — 963 Hz
-5. **Hermetic Principle**: The All is Mind
+5. **Hermetic Principle**: Gender
 6. **Element**: Air + Ether
 7. **Orisha**: Ọbàtálá
 8. **Orisha Color**: White
